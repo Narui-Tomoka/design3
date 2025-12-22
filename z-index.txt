@@ -1,0 +1,9 @@
+z-indexの値を整理するためのメモ
+.hamburger 9999
+.fix-nav 500
+.fv 50
+.header__lang select 10
+.hamburger .border 5
+.fv::before 5
+.fv__img 1
+

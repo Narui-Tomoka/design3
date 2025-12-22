@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>サガマリアージュ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,74 +24,101 @@
     <!-- ヘッダーからmain、footerまですべて入れる -->
     <div class="all-wrap">
       <!-- ヘッダー右側の部分 -->
+      <!-- ↓flex -->
       <header class="header">
         <!-- ↓flex -->
-        <div class="header__menu">
-          <!-- ↓flex -->
+        <div class="header__link-area">
           <nav class="header__nav">
-            <a class="header__nav__item" href="#">About us</a>
-            <a class="header__nav__item" href="#">History</a>
-            <a class="header__nav__item" href="#">Project</a>
-            <a class="header__nav__item" href="#">Story</a>
+            <a class="header__nav__item en" href="#">About us</a>
+            <a class="header__nav__item en" href="#">History</a>
+            <a class="header__nav__item en" href="#">Project</a>
+            <a class="header__nav__item en" href="#">Story</a>
           </nav>
           <!-- ↓flex -->
           <div class="header__sns">
             <a class="header__sns__item" href="#"
-              ><i class="fa-brands fa-facebook"></i
+              ><i class="header__sns__icon fa-brands fa-facebook"></i
             ></a>
             <a class="header__sns__item" href="#"
-              ><i class="fa-brands fa-instagram"></i
+              ><i class="header__sns__icon fa-brands fa-instagram"></i
             ></a>
           </div>
-          <!-- ↓言語選択機能　使うタグなど要確認とりあえずdivタグにしている -->
-          <div class="header__lang">
-            <div class="header__lang__item">Language</div>
-            <!-- <div class="header__lang__item">Select Language</div>
-          <div class="header__lang__item">日本語</div>
-          <div class="header__lang__item">English</div> -->
+        </div>
+        <!-- ↓言語選択機能　使うタグなど要確認とりあえずdivタグにしている -->
+        <!-- absolute -->
+        <div class="header__lang">
+          <div>
+            <p class="en">Language</p>
           </div>
+          <select name="" id="#">
+            <option value="Select Language" selected="selected">
+              Select Language
+            </option>
+            <option value="#">日本語</option>
+            <option value="#">English</option>
+          </select>
         </div>
-        <!-- 左側の3色のロゴがある部分 -->
-        <nav class="fix-nav">
-          <a class="fix-nav__icon" href="#">
-            <img src="src/img/saga-mariage_logo2.png" alt="logo" />
-          </a>
-        </nav>
-        <!-- ハンバーガーメニュー -->
-        <div class="hamburger" id="js-hamburger">
-          <!-- ↓CSSで3本線にする -->
-          <span class="hamburger__border"></span>
-          <span class="hamburger__border"></span>
-          <span class="hamburger__border"></span>
-        </div>
-        <!-- ↓ここは時間があれば実装する部分
-      <nav class="global-nav"></nav> -->
       </header>
+
+      <!-- 左側の3色のロゴがある部分 -->
+      <nav class="fix-nav">
+        <a class="fix-nav__icon" href="#">
+          <img src="src/img/logo.png" alt="logo" />
+        </a>
+      </nav>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger" id="js-hamburger">
+        <!-- ↓CSSで3本線にする -->
+        <span class="hamburger__border"></span>
+        <span class="hamburger__border"></span>
+        <span class="hamburger__border"></span>
+      </div>
+      <!-- ↓ここは時間があれば実装する部分。ハンバーガーメニュー開いたときのメニュー。
+      <nav class="global-nav"></nav> -->
       <main>
-        <section class="main-visual">
+        <section id="fv" class="fv">
           <!-- 文字の部分　後で実装
-        <div class="main-visual__title"></div> -->
-          <div class="main-visual__left">
+        <div class="fv__title"></div> -->
+          <div class="fv__img left">
             <!-- figureタグは図やイラストのまとまりを示すタグ -->
-            <figure>
-              <img src="" alt="" />
+            <!-- 1枚目はcssアニメを安定させる役割で実際には表示されない -->
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image13.jpeg" alt="" />
             </figure>
-            <figure>
-              <img src="" alt="" />
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image13.jpeg" alt="" />
             </figure>
-            <figure>
-              <img src="" alt="" />
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image27.jpeg" alt="" />
             </figure>
-            <figure>
-              <img src="" alt="" />
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image17.jpeg" alt="" />
             </figure>
-            <figure>
-              <img src="" alt="" />
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image12.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/image6.jpeg" alt="" />
             </figure>
           </div>
-          <div class="main-visual__right">
-            <figure>
-              <!-- leftと同じ構造にする -->
+          <div class="fv__img right">
+            <figure class="fv__item">
+              <img class="img" src="src/img/image2.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/image2.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/image7.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image30.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image8.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="src/img/f-image1.jpeg" alt="" />
             </figure>
           </div>
         </section>
@@ -93,12 +126,107 @@
         <section class="topics">
           <h2></h2>
           <!-- スライドショー部分　jsプラグインswiperを使って実装 -->
-          <div class="swiper"></div>
-          <!-- スクロールバーをカスタム -->
-          <div class="swiper-scrollbar"></div>
+          <div class="swiper">
+            <!-- ↓swiper-wrapperの直下にはスライド要素のswiper-wrapperのみを配置 -->
+            <div class="swiper-wrapper">
+              <!-- ↓swiper-slideひとつがスライドの要素一つに該当する -->
+              <!-- １枚目 -->
+              <div class="swiper-slide">
+                <!-- ↓swiper-slideに直接スタイルを当てないほうが良いらしい -->
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+              <!-- ２枚目 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+              <!-- ３枚目 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+              <!-- ４枚目 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+              <!-- ５枚目 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+              <!-- ６枚目 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide__item">
+                  <img src="" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- ↓スクロールバーが必要な時に追加 -->
+            <div class="swiper-scrollbar"></div>
+            <!-- スライド切り替えボタン -->
+            <div class="swiper-button__area">
+              <!-- 前へ -->
+              <div class="swiper-button-prev"></div>
+              <!-- 次へ -->
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <!-- ここまでswiper -->
         </section>
-        <section class="concept"></section>
-        <section class="about"></section>
+        <!-- ↓ここに背景画像設定 -->
+        <section class="concept">
+          <div class="concept__text-area">
+            <span class="en inview op move">CONCEPT</span>
+            <h2 class="mincho inview op move">サガマリアージュ</h2>
+            <span>
+              佐賀の食と器の
+              <br class="pc-off" />
+              可能性を探る、
+              <br class="pc-off" />
+              交流地。
+            </span>
+            <p class="n_txt inview op move">
+              出会いがなければ、最高の一皿は生まれない。
+            </p>
+            <p class="n_txt inview op move">
+              料理人は一皿をつくるために、様々なつながりを持っている。
+              <br />
+              どんな食材を使うか。
+              <br class="sp-off" />
+              どんな味の組み合わせにするか。
+              <br class="sp-off" />
+              どんな器で表現するのか。
+              <br class="sp-off" />
+              どんな食彩を描くのか。
+            </p>
+            <p class="n_txt inview op move">
+              ひとつひとつの決断は、人との出会いから生まれている。
+              <br class="sp-off" />
+              だからこそ、私たちは食の出会いが生まれる場をつくりたい。
+            </p>
+            <p class="n_txt inview op move">
+              料理人が新たな出会いを活かし、可能性を探求することで
+              <br class="sp-off" />
+              一皿に物語が生まれ、今までにないものができるはずだ。
+            </p>
+            <p class="n_txt inview op move">
+              出会いから、世界が注目する食文化を育てよう。
+            </p>
+          </div>
+        </section>
+        <section class="links">
+          <!-- about -->
+          <a href="#"></a>
+          <!-- history -->
+          <a href="#"></a>
+        </section>
         <section class="project"></section>
         <section class="story"></section>
         <section class="activity"></section>

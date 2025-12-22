@@ -1,0 +1,131 @@
+@use "../base/variables" as vars;
+
+// ページ固有のスタイル
+
+.fv {
+  position: relative;
+  z-index: 50;
+  width: calc(100% - #{vars.$menu-margin});
+  margin-left: vars.$menu-margin;
+  aspect-ratio: 1296 / 730;
+  max-height: calc(100vh - #{vars.$header-height});
+  min-height: 700px;
+  overflow: hidden;
+  background: #000;
+  // 疑似要素をimgの上に重ねて少し暗くしている
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.1;
+    z-index: 5;
+  }
+
+  &__img {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute; // inset,width,heightといっしょに使っている
+      inset: 0; // top,right,bottom,leftを一気に指定できる
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      opacity: 0; // 最初は非表示→CSSアニメーションで徐々に表示していく
+
+      // 5枚の写真を20秒でループ
+      --animation-duration: 20s;
+      --animation-delay-base: calc(var(--animation-duration) / 5);
+
+      animation: main var(--animation-duration) linear infinite;
+    }
+
+    /* 1枚目（ダミー　CSSアニメ動作安定用） */
+    &:nth-child(1) img {
+      opacity: 1;
+      animation: firstImageAnimation var(--animation-duration) linear infinite;
+    }
+
+    /* 2枚目以降（実際表示される部分） */
+    &:nth-child(2) img {
+      animation-delay: calc(var(--animation-delay-base) * 0);
+    }
+
+    &:nth-child(3) img {
+      animation-delay: calc(var(--animation-delay-base) * 1);
+    }
+
+    &:nth-child(4) img {
+      animation-delay: calc(var(--animation-delay-base) * 2);
+    }
+
+    &:nth-child(5) img {
+      animation-delay: calc(var(--animation-delay-base) * 3);
+    }
+
+    &:nth-child(6) img {
+      animation-delay: calc(var(--animation-delay-base) * 4);
+    }
+  }
+}
+
+// fvのcssアニメーション
+@keyframes main {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+// 最初のダミー画像用　実際は表示されない
+@keyframes firstImageAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  26% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
