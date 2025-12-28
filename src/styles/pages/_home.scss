@@ -1,4 +1,6 @@
 @use "../base/variables" as vars;
+@use "../base/functions" as func;
+@use "../base/mixins" as mix;
 
 // ページ固有のスタイル
 
@@ -23,6 +25,60 @@
     background: #000;
     opacity: 0.1;
     z-index: 5;
+  }
+
+  // タイトルエリア全体
+  &__title-area {
+    position: absolute;
+    width: func.get_calc(1152, 1296);
+    right: func.get_calc(72, 1296);
+    bottom: -0.2em;
+    z-index: 10;
+  }
+  &__subtitle {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: -1.2em;
+    color: #fff;
+    font-size: clamp(16px, 2.5vw, 40px);
+    line-height: 1;
+    height: auto;
+    overflow: visible;
+    & .char {
+      display: inline-block;
+      opacity: 0;
+      animation: fadeUp 0.05s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+    }
+
+    // 文字数分ループ（今回は18文字なので余裕もって20）
+    @for $i from 1 through 20 {
+      .char:nth-child(#{$i}) {
+        animation-delay: 0.08s * $i;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    text-align: right;
+    letter-spacing: 0.15em;
+    color: #fff;
+    font-size: clamp(16px, 7.8vw, 110px);
+    line-height: 1;
+    height: auto;
+    overflow: visible;
+  }
+
+  // 佐賀の～の部分のアニメーション
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(0.3em);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__img {
@@ -91,6 +147,10 @@
   }
 }
 
+.char {
+  display: inline-block;
+}
+
 // fvのcssアニメーション
 @keyframes main {
   0% {
@@ -127,5 +187,147 @@
   100% {
     opacity: 0;
     transform: scale(1.2);
+  }
+}
+
+// section topics
+.topics {
+  position: relative;
+  margin-left: calc(#{vars.$menu-margin} + 4.89vw);
+  padding: 13rem 0 16rem;
+  width: calc(100% - (#{vars.$menu-margin} + 4.89vw));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & h2 {
+    width: 288px;
+    font-size: 4rem;
+    line-height: 1.3;
+    text-transform: uppercase; // テキストの大文字・小文字を変換する（今回：すべて大文字）
+    & span {
+      font-size: 2.4rem;
+    }
+  }
+  & .pager-area {
+    position: absolute;
+    left: 0;
+    bottom: 24rem;
+    @include mix.mq(pc) {
+      width: 70px;
+    }
+  }
+  // section topicsの中にあるswiper
+  & .swiper {
+    overflow: visible;
+    & .inview.op.move {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.8s, color 0.4s var(--easeOutSine);
+    }
+    &__wrapper {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition-property: transform;
+      box-sizing: content-box;
+    }
+    // slideにhoverするとcolor変化やimgの拡大アニメーションがあるが、他の要素とまとめて「@media (hover: hover)」にまとめられている
+    &-slide {
+      width: 245px;
+      padding-right: 36px;
+      padding-bottom: 152px;
+      margin-right: 36px;
+      box-sizing: border-box;
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: vars.$base-border-color;
+      }
+      & .day {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 2.6rem;
+      }
+      & h3 {
+        font-size: 2rem;
+        --lh: 1.4; // line-heightのための変数
+        position: relative;
+        line-height: calc(var(--lh) * 1em); // 行間
+        padding-top: 0.1px;
+        padding-bottom: 0.1px;
+        letter-spacing: 0.05em; // 隣の文字との間隔
+        margin-bottom: 2.4rem;
+        transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+      }
+      & .slide__text {
+        font-size: 1.4rem;
+        --lh: 1.4;
+        font-weight: 500;
+        margin-bottom: 4.8rem;
+        position: relative;
+        line-height: calc(var(--lh) * 1em);
+        padding-top: 0.1px;
+        padding-bottom: 0.1px;
+        transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+        color: #333;
+        letter-spacing: 0.05em;
+      }
+      &__img {
+        width: calc(100% - 36px);
+        aspect-ratio: 216 / 152;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        & .img {
+          overflow: hidden; // hoverしたときに表示領域をそのままにするため
+          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+          & .fit-img {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-position: center center;
+            background-size: cover;
+            z-index: 1;
+            transition: transform ease 0.4s;
+          }
+        }
+      }
+    }
+    &-scrollbar {
+      &-drag {
+        @include mix.mq(pc) {
+          background-color: vars.$theme-color-or;
+        }
+      }
+    }
+  }
+}
+
+// swiperのスクロールバー
+@include mix.mq(pc) {
+  .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal,
+  .swiper-scrollbar02,
+  .swiper-scrollbar02.swiper-scrollbar-horizontal {
+    position: absolute;
+    left: 0;
+    height: 1px;
+    background-color: #e7e7e7;
+  }
+}
+@include mix.mq(pc) {
+  .topics__slide .swiper-scrollbar.swiper-scrollbar-horizontal {
+    bottom: 80px;
   }
 }

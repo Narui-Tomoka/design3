@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Old+Mincho:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -18,6 +18,15 @@
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
     ></script>
   </head>
   <body>
@@ -77,8 +86,32 @@
       <nav class="global-nav"></nav> -->
       <main>
         <section id="fv" class="fv">
-          <!-- 文字の部分　後で実装
-        <div class="fv__title"></div> -->
+          <!-- 文字がアニメーションで表示される -->
+          <div class="fv__title-area">
+            <span class="fv__subtitle mincho-regular">
+              <!-- 一文字ずつ遅延させて表示 -->
+              <span class="char">佐</span>
+              <span class="char">賀</span>
+              <span class="char">の</span>
+              <span class="char">食</span>
+              <span class="char">と</span>
+              <span class="char">器</span>
+              <span class="char">の</span>
+              <span class="char">可</span>
+              <span class="char">能</span>
+              <span class="char">性</span>
+              <span class="char">を</span>
+              <span class="char">探</span>
+              <span class="char">る</span>
+              <span class="char">、</span>
+              <span class="char">交</span>
+              <span class="char">流</span>
+              <span class="char">地</span>
+              <span class="char">。</span>
+            </span>
+            <!-- ↓アルファベットの部分は一気に下からアニメーションして表示 -->
+            <h1 class="fv__title en">SAGA MARIAGE</h1>
+          </div>
           <div class="fv__img left">
             <!-- figureタグは図やイラストのまとまりを示すタグ -->
             <!-- 1枚目はcssアニメを安定させる役割で実際には表示されない -->
@@ -124,61 +157,124 @@
         </section>
         <!-- ↓flex -->
         <section class="topics">
-          <h2></h2>
+          <h2 class="section-title en">
+            TOPICS
+            <span>&</span>
+            <br />
+            EVENT
+          </h2>
           <!-- スライドショー部分　jsプラグインswiperを使って実装 -->
-          <div class="swiper">
-            <!-- ↓swiper-wrapperの直下にはスライド要素のswiper-wrapperのみを配置 -->
+          <!-- ↓右にはみ出すデザイン実装用のタグ -->
+          <div class="swiper topics__swiper move">
+            <!-- ↓swiper-wrapperの直下にはスライド要素のswiper-slideのみを配置 -->
             <div class="swiper-wrapper">
               <!-- ↓swiper-slideひとつがスライドの要素一つに該当する -->
               <!-- １枚目 -->
-              <div class="swiper-slide">
-                <!-- ↓swiper-slideに直接スタイルを当てないほうが良いらしい -->
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.12.05</span>
+                <h3 class="slide__title mincho2">
+                  人を育て、人が繋ぐ。行方ひさこが佐賀で感じた伝統の進化と継承／陶芸家
+                  渡邊心平さん編
+                </h3>
+                <p class="slide__text">
+                  佐賀旅、第二回目は砥部焼という焼きものの町出身ながら、伊万里...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image11.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
+              </a>
               <!-- ２枚目 -->
-              <div class="swiper-slide">
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.11.07</span>
+                <h3 class="slide__title mincho2">
+                  人を育て、人が繋ぐ。行方ひさこが佐賀で感じた伝統の進化と継承／「唐津
+                  松の井旅館」料理長 森次庸介さん編
+                </h3>
+                <p class="slide__text">
+                  器の世界に惹かれたきっかけは、幼少期に出会った祖父母が唐津旅...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image10.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
+              </a>
               <!-- ３枚目 -->
-              <div class="swiper-slide">
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.03.22</span>
+                <h3 class="slide__title mincho2">USEUM SAGA vol.06</h3>
+                <p class="slide__text">
+                  第6弾の舞台となったのは、2025年に新市誕生20年を迎えた...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image0.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
+              </a>
               <!-- ４枚目 -->
-              <div class="swiper-slide">
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.02.10</span>
+                <h3 class="slide__title mincho2">レジデンス No.4</h3>
+                <p class="slide__text">
+                  シェフ・イン・レジデンス第4弾では、東京・六本木のインド料理...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image20.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
+              </a>
               <!-- ５枚目 -->
-              <div class="swiper-slide">
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.11.14</span>
+                <h3 class="slide__title mincho2">
+                  希少フルーツ栽培のパイオニア、唐津「富田農園」が農家魂をかけてチャレンジし続ける理由
+                </h3>
+                <p class="slide__text">
+                  「俺には悪か癖のあるとさ。とにかく“１番”じゃないと気が済ま...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image26.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
+              </a>
               <!-- ６枚目 -->
-              <div class="swiper-slide">
-                <div class="swiper-slide__item">
-                  <img src="" alt="" />
+              <a class="swiper-slide">
+                <span class="en day">2025.11.13</span>
+                <h3 class="slide__title mincho2">
+                  トークセッションアーカイブ動画公開のお知らせ
+                </h3>
+                <p class="slide__text">
+                  10月18日（土）、19日（日）の2日間に渡って開催した「S...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img class="fit-img" src="src/img/f-image23.jpeg" alt="" />
+                  </figure>
                 </div>
-              </div>
-            </div>
-            <!-- ↓スクロールバーが必要な時に追加 -->
-            <div class="swiper-scrollbar"></div>
-            <!-- スライド切り替えボタン -->
-            <div class="swiper-button__area">
-              <!-- 前へ -->
-              <div class="swiper-button-prev"></div>
-              <!-- 次へ -->
-              <div class="swiper-button-next"></div>
+              </a>
             </div>
           </div>
-          <!-- ここまでswiper -->
+          <!-- /swiper -->
+          <!-- スクロールバー -->
+          <div class="swiper-scrollbar">
+            <div class="swiper-scrollbar-drag"></div>
+          </div>
+          <!-- スライド切り替えボタン -->
+          <div class="pager-area">
+            <!-- 前へ -->
+            <div class="swiper-button-prev">
+              <!-- SVGでボタンデザインを入れる -->
+            </div>
+            <!-- 次へ -->
+            <div class="swiper-button-next">
+              <!-- SVGでボタンデザインを入れる -->
+            </div>
+          </div>
         </section>
         <!-- ↓ここに背景画像設定 -->
         <section class="concept">
@@ -233,6 +329,6 @@
       </main>
       <footer></footer>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>

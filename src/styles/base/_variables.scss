@@ -1,6 +1,7 @@
 // モノトーン
 $base-text-color: #111;
 $base-link-color: #000;
+$base-border-color: #e0e0e0;
 
 // その他の色
 $theme-color-or: #d8654a;
@@ -12,3 +13,8 @@ $header-height: 170px;
 
 // 左側の余白
 $menu-margin: 144px;
+
+// メディアクエリ
+$breakpoints: (
+  "pc": "screen and (min-width: 801px)",
+);

@@ -1,0 +1,7 @@
+// 割り算はDart Sass2.0以降は「/」でできなくなるので関数「math」を使用する
+@use "sass:math";
+
+// 幅計算用
+@function get_calc($size1, $size2) {
+  @return math.div($size1, $size2) * 100%;
+}

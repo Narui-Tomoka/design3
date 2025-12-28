@@ -5,4 +5,30 @@
   font-family: "Marcellus", serif;
   font-weight: 400;
   font-style: normal;
+  color: #000;
+  letter-spacing: 0.05em;
+}
+
+// zen-old-mincho
+.mincho-regular {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.mincho-medium {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.mincho-semibold {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+// Noto Serif JP
+.mincho2 {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
