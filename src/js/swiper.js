@@ -2,35 +2,6 @@
 const subTitElement = document.querySelector(".fv__subtitle");
 const fvTitElement = document.querySelector(".fv__title");
 
-if (subTitElement) {
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (
-        mutation.type === "attributes" &&
-        mutation.attributeName === "class"
-      ) {
-        if (subTitElement.classList.contains("move")) {
-          // 2秒後に .fv_tit に .move クラスを付与
-          setTimeout(() => {
-            if (fvTitElement) {
-              fvTitElement.classList.add("move");
-            }
-          }, 2000); // 2000ミリ秒 = 2秒
-        }
-      }
-    });
-  });
-
-  // オブザーバーの設定
-  observer.observe(subTitElement, {
-    attributes: true, // クラス変更を監視
-  });
-}
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.querySelector(".img:nth-child(1)").classList.add("start");
-  }, 5000); // 適宜調整
-});
 document.addEventListener("DOMContentLoaded", function () {
   const mySwiper = new Swiper(".topics__swiper", {
     slidesPerView: "auto",
@@ -48,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const mySwiper02 = new Swiper(".voice_swiper", {
     slidesPerView: "auto",

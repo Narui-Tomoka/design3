@@ -197,7 +197,6 @@
   padding: 13rem 0 16rem;
   width: calc(100% - (#{vars.$menu-margin} + 4.89vw));
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   & h2 {
     width: 288px;
@@ -218,7 +217,7 @@
   }
   // section topicsの中にあるswiper
   & .swiper {
-    overflow: visible;
+    flex: 1;
     & .inview.op.move {
       opacity: 1;
       visibility: visible;
