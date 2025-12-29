@@ -37,27 +37,38 @@
   }
   &__subtitle {
     position: absolute;
-    width: 100%;
+    width: fit-content;
     right: 0;
-    top: -1.2em;
+    top: -0.7em;
+    letter-spacing: 0.15em;
     color: #fff;
     font-size: clamp(16px, 2.5vw, 40px);
     line-height: 1;
     height: auto;
-    overflow: visible;
+    overflow: hidden;
     & .char {
       display: inline-block;
       opacity: 0;
       animation: fadeUp 0.05s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
     }
-
+    // 佐賀の～の部分のアニメーション
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(0.3em);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     // 文字数分ループ（今回は18文字なので余裕もって20）
     @for $i from 1 through 20 {
       .char:nth-child(#{$i}) {
-        animation-delay: 0.08s * $i;
+        animation-delay: 0.05s * $i;
       }
     }
-  }
+  } // サブタイトル閉じ
   &__title {
     position: relative;
     text-align: right;
@@ -66,32 +77,32 @@
     font-size: clamp(16px, 7.8vw, 110px);
     line-height: 1;
     height: auto;
-    overflow: visible;
-  }
-
-  // 佐賀の～の部分のアニメーション
-  @keyframes fadeUp {
-    from {
+    overflow: hidden;
+    & .text {
+      // SAGA MARIAGE
+      display: block;
       opacity: 0;
-      transform: translateY(0.3em);
+      transform: translateY(100%);
+      transition: transform 0.55s cubic-bezier(0.39, 0.575, 0.565, 1),
+        opacity 0.55s cubic-bezier(0.39, 0.575, 0.565, 1);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    &.move {
+      & .text {
+        transition-delay: 1.4s;
+        transform: translateY(15%);
+        opacity: 1;
+      }
     }
   }
-
   &__img {
     position: absolute;
     z-index: 1;
     bottom: 0;
     width: 50%;
     height: 100%;
-
     &.left {
       left: 0;
     }
-
     &.right {
       right: 0;
     }
@@ -108,9 +119,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-
       opacity: 0; // 最初は非表示→CSSアニメーションで徐々に表示していく
-
       // 5枚の写真を20秒でループ
       --animation-duration: 20s;
       --animation-delay-base: calc(var(--animation-duration) / 5);
@@ -330,3 +339,5 @@
     bottom: 80px;
   }
 }
+
+// section concept

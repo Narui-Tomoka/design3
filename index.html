@@ -88,29 +88,12 @@
         <section id="fv" class="fv">
           <!-- 文字がアニメーションで表示される -->
           <div class="fv__title-area">
-            <span class="fv__subtitle mincho-regular">
-              <!-- 一文字ずつ遅延させて表示 -->
-              <span class="char">佐</span>
-              <span class="char">賀</span>
-              <span class="char">の</span>
-              <span class="char">食</span>
-              <span class="char">と</span>
-              <span class="char">器</span>
-              <span class="char">の</span>
-              <span class="char">可</span>
-              <span class="char">能</span>
-              <span class="char">性</span>
-              <span class="char">を</span>
-              <span class="char">探</span>
-              <span class="char">る</span>
-              <span class="char">、</span>
-              <span class="char">交</span>
-              <span class="char">流</span>
-              <span class="char">地</span>
-              <span class="char">。</span>
+            <span class="fv__subtitle mincho-regular d-txt">
+              <!-- JSでspanタグに分割してCSSで一文字ずつ遅延させて表示 -->
+              佐賀の食と器の可能性を探る、交流地。
             </span>
             <!-- ↓アルファベットの部分は一気に下からアニメーションして表示 -->
-            <h1 class="fv__title en">SAGA MARIAGE</h1>
+            <h1 class="fv__title en"><span class="text">SAGA MARIAGE</span></h1>
           </div>
           <div class="fv__img left">
             <!-- figureタグは図やイラストのまとまりを示すタグ -->
