@@ -519,6 +519,7 @@
     letter-spacing: 0.05em;
     font-size: 4rem;
     margin-bottom: 4.8rem;
+    text-transform: uppercase;
   }
   & .swiper-scrollbar {
     &-drag {
@@ -537,8 +538,12 @@
   }
   & .slide {
     display: flex;
-    width: 2376px;
+    width: 2376px; // storyは幅だけ上書きする（1188px）
     letter-spacing: 0;
+    &.story {
+      width: 1188px; // 半角スペースなし・・・「かつ」 幅を上書き
+      margin: 0 auto; // projectより真ん中に。
+    }
     & a {
       display: block;
       position: relative;
@@ -590,6 +595,66 @@
       top: 0;
       left: 360px;
       width: 70px;
+    }
+  }
+}
+
+// activity log
+// topicsと同じレイアウトを多用するのでclass名が使いまわされている
+.topics {
+  &.-staff {
+    margin-top: 7rem;
+    padding-top: 0;
+    padding-bottom: 24rem;
+    & .swiper-wrapper {
+      & .swiper-slide {
+        padding-top: 3.2rem;
+        padding-right: 0;
+        padding-bottom: 0;
+        border-top: 1px solid #e0e0e0;
+        &::after {
+          display: none; // スライド右側の線を消す
+        }
+        & .cate {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: vars.$theme-color-gr;
+          margin-bottom: 1.6rem;
+        }
+        & .img_area {
+          position: relative;
+          width: 100%;
+          margin-bottom: 1.6rem;
+          aspect-ratio: 216 / 152;
+          bottom: 0;
+          left: 0;
+          z-index: 10;
+        }
+        & h3 {
+          font-size: 1.6rem;
+          letter-spacing: 0;
+          margin-bottom: 2rem;
+          font-weight: 500;
+        }
+        & .n_txt {
+          font-size: 1.4rem;
+          --lh: 1.6;
+          font-weight: 500;
+          position: relative;
+          line-height: calc(var(--lh) * 1em);
+          padding-top: 0.1px;
+          padding-bottom: 0.1px;
+          transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+          margin-bottom: 0;
+        }
+      }
+    }
+    & .vm {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 127px;
     }
   }
 }

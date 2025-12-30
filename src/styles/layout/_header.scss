@@ -7,6 +7,17 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   padding: 40px 0 0 144px; //144pxは左側のメニュー幅と同じ幅
+  & .logo {
+    position: absolute;
+    left: 144px;
+    top: 60px;
+    width: 137px;
+    & img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   &__link-area {
     width: 50%;
     position: relative;
