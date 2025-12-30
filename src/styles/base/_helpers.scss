@@ -1,4 +1,5 @@
 @use "./variables" as vars;
+@use "./mixins" as mix;
 
 // marcellus-regular
 .en {
@@ -31,4 +32,64 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+// swiperの前へ・次へボタンのスタイル
+
+.pager-area {
+  position: absolute;
+  left: 0;
+  bottom: 24rem;
+}
+.pager-area {
+  @include mix.mq(pc) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: transparent;
+}
+
+// 文字の表示アニメーション
+// concept
+// intersectionObserverでmoveをつけることで
+.inview.op {
+  opacity: 0;
+  visibility: hidden;
+  &.move {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s, color 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+}
+
+// aboutとhistoryの「view more」で単独でスタイル設定しているところ
+.vm {
+  display: inline-block;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+// レスポンシブ関係
+.pc-off {
+  display: none !important;
+}
+.sp-off {
+  display: block !important;
+  @include mix.mq(tab) {
+    display: none !important;
+  }
+}
+
+.n_txt {
+  color: #333;
+  letter-spacing: 0.05em;
 }

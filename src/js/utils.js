@@ -45,7 +45,9 @@ if (subTitElement) {
     attributes: true, // class変更を監視する
   });
   // ロード時に、observerが動く条件である"move"のクラスをsubTitElementにつける
-  // オブザーバーの設定後に書かないと動かないので注意！
+  // （オブザーバーの設定後に書かないと動かないので注意！）
+  // loadは画像やフォント含めて読み込み終わってから実行するので今回の用途に適していると考えました
+  // （DOMContentLoadedはHTML読み込みができたらすぐ）
   window.addEventListener("load", () => {
     subTitElement.classList.add("move");
   });

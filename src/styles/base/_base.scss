@@ -2,11 +2,33 @@
 
 html {
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
   color: vars.$base-text-color;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1024px) {
+  html {
+    font-size: 0.78125vw;
+  }
+}
+
+@media screen and (max-width: 430px) and (min-width: 376px) {
+  html {
+    font-size: 2.659vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 2.66667vw;
+  }
 }
 
 *,
@@ -22,6 +44,7 @@ a {
   color: vars.$base-link-color;
   text-decoration: none;
   display: block;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 li {

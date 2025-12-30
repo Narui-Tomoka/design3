@@ -12,3 +12,8 @@ z-indexの値を整理するためのメモ
 
 .swiper-slide__img 10
 .fit-img 1
+
+.links 10
+.links .square 10
+.links .img_area 1
+.links .vm 10

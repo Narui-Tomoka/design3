@@ -250,27 +250,48 @@
           <!-- スライド切り替えボタン -->
           <div class="pager-area">
             <!-- 前へ -->
-            <div class="swiper-button-prev">
-              <!-- SVGでボタンデザインを入れる -->
+            <div class="button topics-button swiper-button-prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+              </svg>
             </div>
             <!-- 次へ -->
-            <div class="swiper-button-next">
-              <!-- SVGでボタンデザインを入れる -->
+            <div class="button topics-button swiper-button-next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
             </div>
           </div>
         </section>
-        <!-- ↓ここに背景画像設定 -->
         <section class="concept">
           <div class="concept__text-area">
-            <span class="en inview op move">CONCEPT</span>
-            <h2 class="mincho inview op move">サガマリアージュ</h2>
-            <span>
-              佐賀の食と器の
-              <br class="pc-off" />
-              可能性を探る、
-              <br class="pc-off" />
-              交流地。
-            </span>
+            <span class="en inview op move">concept</span>
+            <h2 class="mincho-semibold inview op move">
+              サガマリアージュ<br />
+              <span>
+                佐賀の食と器の
+                <br class="pc-off" />
+                可能性を探る、
+                <br class="pc-off" />
+                交流地。
+              </span>
+            </h2>
+            <!-- ↓JSでmoveのclassをつけることでふわっと表示させる -->
+            <!-- 開発用に手動でmoveつけている→JS実装時に外す -->
             <p class="n_txt inview op move">
               出会いがなければ、最高の一皿は生まれない。
             </p>
@@ -302,12 +323,110 @@
         </section>
         <section class="links">
           <!-- about -->
-          <a href="#"></a>
+          <a href="#">
+            <div>
+              <h2 class="en ub_tit_txt -center">about</h2>
+              <p class="n_txt">
+                佐賀県の有益な資源である「食材」と「器」を「料理人」の感性で磨き上げながら、料理という一皿の上に佐賀の可能性を表現・発信していくことで、新たな価値を創造する取組。
+              </p>
+            </div>
+            <p class="en vm">View More</p>
+            <span class="square">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </span>
+            <figure class="img_area">
+              <img class="fit-img" src="./src/img/f-image34.jpeg" alt="" />
+            </figure>
+          </a>
           <!-- history -->
-          <a href="#"></a>
+          <a href="#">
+            <div>
+              <h2 class="en ub_tit_txt -center">history</h2>
+              <p class="n_txt">
+                有田焼創業400年事業や肥前さが幕末維新博覧会、アジアベストレストラン50など、食と器をコンセプトにしたプロジェクトのこれまでの歩み。
+              </p>
+            </div>
+            <p class="en vm">View More</p>
+            <span class="square">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </span>
+            <figure class="img_area">
+              <img class="fit-img" src="./src/img/image8.jpeg" alt="" />
+            </figure>
+          </a>
         </section>
-        <section class="project"></section>
-        <section class="story"></section>
+        <section class="ps-area" id="project">
+          <div class="ps-slide_area project-slide">
+            <h2 class="en">project</h2>
+            <div class="swiper project-swiper">
+              <div class="swiper-wrapper">
+                <!-- 1枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img class="fit_img" src="src/img/f-image2.jpeg" alt="" />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">サガマリアージュラボ</p>
+                    <p class="n_txt">
+                      <!-- before -->
+                      県内料理人と食材・器の作り手たちが互いの知識や技術、感性などを共有する研究会
+                      <!-- after -->
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-scrollber">
+              <div class="swiper-scrollbar-drag"></div>
+            </div>
+            <div class="pager-area">
+              <div class="button project-button swiper-button-next">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+                </svg>
+              </div>
+              <div class="button project-button swiper-button-prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ps-slide_area story-slide"></div>
+        </section>
         <section class="activity"></section>
       </main>
       <footer></footer>

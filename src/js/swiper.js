@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-scrollbar",
     },
     navigation: {
-      nextEl: ".topics_slide_area .button-next",
-      prevEl: ".topics_slide_area .button-prev",
+      nextEl: ".topics-button.swiper-button-next",
+      prevEl: ".topics-button.swiper-button-prev",
     },
   });
 });
