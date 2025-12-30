@@ -17,3 +17,6 @@ z-indexの値を整理するためのメモ
 .links .square 10
 .links .img_area 1
 .links .vm 10
+
+.ps-area .slide a .img_area 10
+.ps-area .slide a .text_area 10

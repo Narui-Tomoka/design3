@@ -300,18 +300,7 @@
         & .img {
           overflow: hidden; // hoverしたときに表示領域をそのままにするため
           transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-          & .fit-img {
-            position: absolute;
-            inset: 0;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background-position: center center;
-            background-size: cover;
-            z-index: 1;
-            transition: transform ease 0.4s;
-          }
+          // fit-imgは _helpers.scssに格納
         }
       }
     }
@@ -322,24 +311,6 @@
         }
       }
     }
-  }
-}
-
-// swiperのスクロールバー
-@include mix.mq(pc) {
-  .swiper-scrollbar,
-  .swiper-scrollbar.swiper-scrollbar-horizontal,
-  .swiper-scrollbar02,
-  .swiper-scrollbar02.swiper-scrollbar-horizontal {
-    position: absolute;
-    left: 0;
-    height: 1px;
-    background-color: #e7e7e7;
-  }
-}
-@include mix.mq(pc) {
-  .topics .swiper-scrollbar.swiper-scrollbar-horizontal {
-    bottom: 80px;
   }
 }
 
@@ -382,6 +353,7 @@
       font-weight: 600;
     }
   }
+  // .n_txtは_helpers.scssに基本のスタイルを記述
   & .n_txt {
     font-size: 1.6rem;
     --lh: 2.1;
@@ -389,20 +361,6 @@
     line-height: calc(var(--lh) * 1em);
     padding-top: 0.1px;
     padding-bottom: 0.1px;
-    &::before {
-      content: "";
-      display: block;
-      height: 0;
-      width: 0;
-      margin-top: calc((1 - var(--lh)) * 0.5em);
-    }
-    &::after {
-      content: "";
-      display: block;
-      height: 0;
-      width: 0;
-      margin-bottom: calc((1 - var(--lh)) * 0.5em);
-    }
     // 後に続くpタグのみ対象にする
     & + p {
       margin-top: 4.8rem;
@@ -465,6 +423,7 @@
       }
     }
   }
+  // .n_txtは_helpers.scssに基本のスタイルを記述
   & .n_txt {
     font-size: 1.6rem;
     --lh: 1.8;
@@ -548,3 +507,89 @@
 }
 
 // project/story
+.ps-area {
+  position: relative;
+  width: calc(100% - vars.$menu-margin);
+  margin-left: vars.$menu-margin;
+  padding-top: 16rem;
+  padding-bottom: 0;
+  & h2.en {
+    display: block;
+    margin-left: 7.2rem;
+    letter-spacing: 0.05em;
+    font-size: 4rem;
+    margin-bottom: 4.8rem;
+  }
+  & .swiper-scrollbar {
+    &-drag {
+      @include mix.mq(pc) {
+        background-color: vars.$theme-color-or;
+      }
+    }
+  }
+}
+.ps-slide_area {
+  position: relative;
+  & .slide-wrap {
+    width: calc(100% - 3.6rem);
+    margin-left: 3.6rem;
+    margin-bottom: 3.5rem;
+  }
+  & .slide {
+    display: flex;
+    width: 2376px;
+    letter-spacing: 0;
+    & a {
+      display: block;
+      position: relative;
+      width: 360px;
+      margin-left: 3.6rem;
+      & .img_area {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        z-index: 10;
+      }
+      & .text-area {
+        position: relative;
+        width: 85%;
+        margin-left: 15%;
+        background: #fff;
+        z-index: 10;
+        padding: 30px 0 0 32px;
+        box-sizing: border-box;
+        transform: translateY(-80px);
+        & .mincho-regular {
+          display: inline;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1),
+            0.4s background-color cubic-bezier(0.39, 0.575, 0.565, 1);
+          font-size: 2rem;
+          font-weight: 700;
+          background: none;
+        }
+        // .n_txtは_helpers.scssに基本のスタイルを記述
+        & .n_txt {
+          transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+          font-size: 1.4rem;
+          --lh: 1.4; // helpersで変数を使う
+          margin-top: 20px;
+        }
+        // .vmは_helpers.scssに基本のスタイルを記述→上書き
+        & .vm {
+          font-size: 1.2rem;
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+  & .pager-area {
+    @include mix.mq(pc) {
+      position: absolute;
+      top: 0;
+      left: 360px;
+      width: 70px;
+    }
+  }
+}

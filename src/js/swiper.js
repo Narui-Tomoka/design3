@@ -1,7 +1,12 @@
-// .sub_tit に .move クラスが追加されることを監視する
-const subTitElement = document.querySelector(".fv__subtitle");
-const fvTitElement = document.querySelector(".fv__title");
+// swiperの設定
+// ★同じスワイパーでも2つの書き方が使われている
+// パターン①DOMContentLoaded + new Swiper
+// パターン②let ○○Swiper + enable関数
 
+// topicsとvoiceはコンテンツ量から考えて画面幅に関係なくスクロールする/しないで固定
+// →画面幅が変わっても再構成されない構造
+
+// ①DOMContentLoaded + new Swiper
 document.addEventListener("DOMContentLoaded", function () {
   const mySwiper = new Swiper(".topics__swiper", {
     slidesPerView: "auto",
@@ -11,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     mousewheel: true, // トラックパッドやマウスホイールのサポートを有効にする
     freeMode: true, // 自由スクロールモードを有効化
     scrollbar: {
-      el: ".swiper-scrollbar",
+      el: ".topics .swiper-scrollbar",
     },
     navigation: {
-      nextEl: ".topics-button.swiper-button-next",
-      prevEl: ".topics-button.swiper-button-prev",
+      nextEl: ".topics .button-next",
+      prevEl: ".topics .button-prev",
     },
   });
 });
@@ -25,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: "auto",
     spaceBetween: 36,
     grabCursor: true,
-    speed: 800, // スピードを500ミリ秒に設定
+    speed: 800, // スピードを800ミリ秒に設定
     scrollbar: {
       el: ".swiper-scrollbar02",
     },
@@ -35,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+// パターン②let ○○Swiper + enable関数
 document.addEventListener("DOMContentLoaded", function () {
   // .project-slider
   let projectSwiper;
@@ -50,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       // mousewheel: true, // トラックパッドやマウスホイールのサポートを有効にする
       scrollbar: {
-        el: ".swiper-scrollbar-project",
+        el: ".project-slide .swiper-scrollbar",
         draggable: true,
       },
       navigation: {
@@ -73,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       speed: 800,
       scrollbar: {
-        el: ".swiper-scrollbar-story",
+        el: ".story-slide .swiper-scrollbar",
         draggable: true,
       },
       navigation: {
@@ -88,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   enableStorySwiper();
 
   // ウィンドウリサイズ時にSwiperを更新
+  // レスポンシブ対応
   window.addEventListener("resize", function () {
     enableProjectSwiper();
     enableStorySwiper();
