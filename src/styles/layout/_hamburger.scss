@@ -1,0 +1,69 @@
+@use "../base/variables" as vars;
+@use "../base/mixins" as mix;
+
+// ハンバーガーメニュー
+.hamburger {
+  position: fixed;
+  top: 0; // 上下中央に寄せるための指定
+  bottom: 0; // 上下中央に寄せるための指定
+  left: 61px;
+  margin: auto;
+  width: 18px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 1;
+  transition: all 0.4s ease;
+  // ↓ 下に自分用の解説あり
+  @include mix.hover {
+    .hamburger__border:nth-child(2),
+    .hamburger__border:nth-child(3) {
+      height: 100%;
+    }
+  }
+  &__border {
+    display: block;
+    position: absolute;
+    width: 2px;
+    z-index: 5;
+    transition: all 0.4s ease;
+    &:nth-child(1) {
+      left: 0;
+      height: 100%;
+      background: vars.$theme-color-gr;
+    }
+    &:nth-child(2) {
+      left: 0; // right、marginと合わせて左右中央揃えに
+      right: 0;
+      margin: auto; // 左右中央揃えに必須
+      height: 32px;
+      background: vars.$theme-color-or;
+    }
+    &:nth-child(3) {
+      right: 0;
+      height: 24px;
+      background: vars.$theme-color-bl;
+    }
+  }
+}
+
+// ==========================================================================
+// ミックスイン解説
+// ==========================================================================
+// .hamburger {
+// @include mix.hover {
+//     .hamburger__border:nth-child(2),
+//     .hamburger__border:nth-child(3) {
+//       height: 100%;
+//     }
+//  }
+// の形にすると、「hoverされるのは .hamburger」で
+// 「影響を受けるのは中の .hamburger__border」というのがはっきりする。
+// mixinを使わず書くと
+// .hamburger:hover .hamburger__border:nth-child(2),
+// .hamburger:hover .hamburger__border:nth-child(3) {
+//   height: 100%;
+// }
+// の形になる
+// hoverされる「親」に書くのがコツ
+// SCSSにすると「構造＝挙動」になるのでわかりやすい

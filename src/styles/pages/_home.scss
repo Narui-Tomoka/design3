@@ -264,7 +264,9 @@
       & .day {
         display: block;
         font-size: 1.2rem;
+        color: vars.$theme-color-gr;
         margin-bottom: 2.6rem;
+        transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
       }
       & h3 {
         font-size: 2rem;
@@ -648,6 +650,9 @@
           transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
           margin-bottom: 0;
           letter-spacing: 0.05em;
+        }
+        & .day {
+          color: #111;
         }
       }
     }
