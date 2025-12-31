@@ -136,23 +136,23 @@
 
     /* 2枚目以降（実際表示される部分） */
     &:nth-child(2) img {
-      animation-delay: calc(var(--animation-delay-base) * 0);
-    }
-
-    &:nth-child(3) img {
       animation-delay: calc(var(--animation-delay-base) * 1);
     }
 
-    &:nth-child(4) img {
+    &:nth-child(3) img {
       animation-delay: calc(var(--animation-delay-base) * 2);
     }
 
-    &:nth-child(5) img {
+    &:nth-child(4) img {
       animation-delay: calc(var(--animation-delay-base) * 3);
     }
 
-    &:nth-child(6) img {
+    &:nth-child(5) img {
       animation-delay: calc(var(--animation-delay-base) * 4);
+    }
+
+    &:nth-child(6) img {
+      animation-delay: calc(var(--animation-delay-base) * 5);
     }
   }
 }

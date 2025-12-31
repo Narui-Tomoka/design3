@@ -31,15 +31,11 @@
     ></script>
   </head>
   <body>
-    <!-- ヘッダーからmain、footerまですべて入れる -->
     <div class="all-wrap">
-      <!-- ヘッダー右側の部分 -->
-      <!-- ↓flex -->
       <header class="header">
         <a class="logo" href="#">
           <img src="src/img/shonanmariage.png" alt="代替ロゴ" />
         </a>
-        <!-- ↓flex -->
         <div class="header__link-area">
           <nav class="header__nav">
             <a class="header__nav__item en" href="#">About us</a>
@@ -47,7 +43,6 @@
             <a class="header__nav__item en" href="#">Project</a>
             <a class="header__nav__item en" href="#">Story</a>
           </nav>
-          <!-- ↓flex -->
           <div class="header__sns">
             <a class="header__sns__item" href="#"
               ><i class="header__sns__icon fa-brands fa-facebook"></i
@@ -57,8 +52,7 @@
             ></a>
           </div>
         </div>
-        <!-- ↓言語選択機能　使うタグなど要確認とりあえずdivタグにしている -->
-        <!-- absolute -->
+        <!-- ↓言語選択機能 -->
         <div class="header__lang">
           <div>
             <p class="en">Language</p>
@@ -101,9 +95,10 @@
           </div>
           <div class="fv__img left">
             <!-- figureタグは図やイラストのまとまりを示すタグ -->
-            <!-- 1枚目はcssアニメを安定させる役割で実際には表示されない -->
+            <!-- 1枚目はcssアニメを安定させる役割で2回目以降は表示されない -->
+            <!-- →2週目以降は5枚でループする -->
             <figure class="fv__item">
-              <img class="img" src="src/img/f-image13.jpeg" alt="" />
+              <img class="img" src="src/img/f-image19.jpeg" alt="" />
             </figure>
             <figure class="fv__item">
               <img class="img" src="src/img/f-image13.jpeg" alt="" />
@@ -123,7 +118,7 @@
           </div>
           <div class="fv__img right">
             <figure class="fv__item">
-              <img class="img" src="src/img/image2.jpeg" alt="" />
+              <img class="img" src="src/img/image3.jpeg" alt="" />
             </figure>
             <figure class="fv__item">
               <img class="img" src="src/img/image2.jpeg" alt="" />
@@ -142,7 +137,6 @@
             </figure>
           </div>
         </section>
-        <!-- ↓flex -->
         <section class="topics">
           <h2 class="section-title en">
             TOPICS
@@ -294,8 +288,7 @@
                 交流地。
               </span>
             </h2>
-            <!-- ↓JSでmoveのclassをつけることでふわっと表示させる -->
-            <!-- 開発用に手動でmoveつけている→JS実装時に外す -->
+            <!-- ↓jQueryプラグインでmoveのclassをつけることでふわっと表示させる -->
             <p class="n_txt inview op">
               出会いがなければ、最高の一皿は生まれない。
             </p>
@@ -738,40 +731,26 @@
                 <!-- クリック時にstyle="max-height: 0px;"→273pxにインラインでスタイルが挿入される -->
                 <div class="small_links">
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>サガマリアージュラボ</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>UREUM SAGA</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>サガマリアージュセミナー</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>サガマリアージュツアー</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>シェフインレジデンスSAGA</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>サガマリアージュアカデミー</span>
-                    <!-- after -->
                   </a>
                   <span class="global-nav__sub-title en">Special Event</span>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>SAGAガストロノミー会議</span>
-                    <!-- after -->
                   </a>
                 </div>
               </div>
@@ -784,37 +763,26 @@
                 </span>
                 <div class="small_links">
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>食</span>
-                    <!-- after -->
                   </a>
                   <a class="mincho-regular" href="#">
-                    <!-- before -->
                     <span>器</span>
-                    <!-- after --> </a
-                  ><a class="mincho-regular" href="#">
-                    <!-- before -->
+                  </a>
+                  <a class="mincho-regular" href="#">
                     <span>料理人</span>
-                    <!-- after -->
                   </a>
                 </div>
               </div>
               <a class="en" href="#">
-                <!-- before -->
                 <span>Activity Log</span>
-                <!-- after -->
               </a>
             </div>
             <div class="sns_links">
               <a href="#">
-                <!-- before -->
                 <i class="header__sns__icon fa-brands fa-facebook"></i>
-                <!-- after -->
               </a>
               <a href="#">
-                <!-- before -->
                 <i class="header__sns__icon fa-brands fa-instagram"></i>
-                <!-- after -->
               </a>
             </div>
           </div>
@@ -830,7 +798,6 @@
           <p class="en copy -fz10">© 2024 Saga Mariage</p>
         </div>
         <div class="btm_area">
-          <!-- フッターの画像ロゴを入れる（footerの::afterより上） -->
           <img class="bg" src="src/img/footer-sagamariage.png" alt="" />
         </div>
       </footer>
