@@ -52,3 +52,40 @@ if (subTitElement) {
     subTitElement.classList.add("move");
   });
 }
+
+// 要素をフェードインさせるためのjQuery（プラグイン「jquery.inview」使用）
+$(document).ready(function () {
+  $(".inview").on("inview", function () {
+    $(this).addClass("move");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sLinksWraps = document.querySelectorAll(".s_links_wrap");
+
+  sLinksWraps.forEach((sLinksWrap) => {
+    const smallLinks = sLinksWrap.querySelector(".small_links");
+    const toggleButton = sLinksWrap.querySelector(".oc_btn");
+
+    if (smallLinks && toggleButton) {
+      // 初期状態として max-height を 0 に設定
+      smallLinks.style.maxHeight = "0px";
+
+      // クリック処理
+      toggleButton.addEventListener("click", () => {
+        if (smallLinks.classList.contains("active")) {
+          // アクティブ状態なら閉じる
+          smallLinks.style.maxHeight = "0px";
+          smallLinks.classList.remove("active");
+          toggleButton.classList.remove("active");
+        } else {
+          // 非アクティブ状態なら高さを設定して開く
+          const scrollHeight = smallLinks.scrollHeight;
+          smallLinks.style.maxHeight = scrollHeight + "px";
+          smallLinks.classList.add("active");
+          toggleButton.classList.add("active");
+        }
+      });
+    }
+  });
+});

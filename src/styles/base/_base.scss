@@ -59,3 +59,13 @@ svg {
   width: 100%;
   height: auto;
 }
+
+input,
+select,
+textarea,
+button,
+*::before,
+*::after {
+  transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transform: translate3d(0, 0, 0);
+}

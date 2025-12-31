@@ -34,13 +34,24 @@
   font-style: normal;
 }
 
+// フッターなどに登場
+.global-nav {
+  &__sub-title {
+    display: block;
+    color: vars.$theme-color-or;
+    margin-top: 3.2rem;
+    margin-bottom: 0.9rem;
+  }
+}
+
 // .n_txtは何度か出てくるのでここで基本のスタイルを指定しておいて
 // 必要に応じて_home.scssで上書きして使う
 // _home.scssで入力した--lhをここで計算して使う
 .n_txt {
   position: relative;
   color: #333;
-  letter-spacing: 0.05em;
+  // letter-spacing: 0.05em;
+  letter-spacing: 0;
   position: relative;
   line-height: calc(var(--lh) * 1em);
   padding-top: 0.1px;
@@ -186,7 +197,93 @@
   }
 }
 
-.n_txt {
-  color: #333;
-  letter-spacing: 0;
+/* ==========================================================================
+	inview （jQueryプラグインで、スクロールで画面内に入った時にイベント処理を行える）
+========================================================================== */
+.inview.bt_one,
+.inview.bt > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1),
+    transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1),
+    transform 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.inview.bt_one.move,
+.inview.bt.move > * {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+.inview.bt_one.move:nth-child(2),
+.inview.bt.move > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.inview.bt_one.move:nth-child(3),
+.inview.bt.move > *:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.inview.bt_one.move:nth-child(4),
+.inview.bt.move > *:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.inview.bt_one.move:nth-child(5),
+.inview.bt.move > *:nth-child(5) {
+  transition-delay: 0.8s;
+}
+.inview.bt_one.move:nth-child(6),
+.inview.bt.move > *:nth-child(6) {
+  transition-delay: 1s;
+}
+.inview.bt_one.move:nth-child(7),
+.inview.bt.move > *:nth-child(7) {
+  transition-delay: 1.2s;
+}
+.inview.bt_one.move:nth-child(8),
+.inview.bt.move > *:nth-child(8) {
+  transition-delay: 1.4s;
+}
+.inview.bt_one.move:nth-child(9),
+.inview.bt.move > *:nth-child(9) {
+  transition-delay: 1.6s;
+}
+.inview.bt_one.move:nth-child(10),
+.inview.bt.move > *:nth-child(10) {
+  transition-delay: 1.8s;
+}
+.inview.bt_one.move:nth-child(11),
+.inview.bt.move > *:nth-child(11) {
+  transition-delay: 2s;
+}
+.inview.bt_one.move:nth-child(12),
+.inview.bt.move > *:nth-child(12) {
+  transition-delay: 2.2s;
+}
+.inview.bt_one.move:nth-child(13),
+.inview.bt.move > *:nth-child(13) {
+  transition-delay: 2.4s;
+}
+.inview.bt_one.move:nth-child(14),
+.inview.bt.move > *:nth-child(14) {
+  transition-delay: 2.6s;
+}
+
+.inview.op {
+  opacity: 0;
+  visibility: hidden;
+}
+.inview.op.move {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s, color 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.inview.blur {
+  filter: blur(5px);
+}
+
+.inview.blur.move {
+  transition: 0.8s filter cubic-bezier(0.39, 0.575, 0.565, 1);
 }

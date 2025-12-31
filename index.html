@@ -20,6 +20,7 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script type="text/javascript" src="./src/js/jquery.inview.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
@@ -88,7 +89,7 @@
       <!-- ↓ここは時間があれば実装する部分。ハンバーガーメニュー開いたときのメニュー。
       <nav class="global-nav"></nav> -->
       <main>
-        <section id="fv" class="fv">
+        <section id="fv" class="fv inview">
           <!-- 文字がアニメーションで表示される -->
           <div class="fv__title-area">
             <span class="fv__subtitle mincho-regular d-txt">
@@ -151,7 +152,7 @@
           </h2>
           <!-- スライドショー部分　jsプラグインswiperを使って実装 -->
           <!-- ↓右にはみ出すデザイン実装用のタグ -->
-          <div class="swiper topics__swiper move">
+          <div class="swiper topics__swiper inview op">
             <!-- ↓swiper-wrapperの直下にはスライド要素のswiper-slideのみを配置 -->
             <div class="swiper-wrapper">
               <!-- ↓swiper-slideひとつがスライドの要素一つに該当する -->
@@ -282,8 +283,8 @@
         </section>
         <section class="concept">
           <div class="concept__text-area">
-            <span class="en inview op move">concept</span>
-            <h2 class="mincho-semibold inview op move">
+            <span class="en inview op">concept</span>
+            <h2 class="mincho-semibold inview op">
               サガマリアージュ<br />
               <span>
                 佐賀の食と器の
@@ -295,10 +296,10 @@
             </h2>
             <!-- ↓JSでmoveのclassをつけることでふわっと表示させる -->
             <!-- 開発用に手動でmoveつけている→JS実装時に外す -->
-            <p class="n_txt inview op move">
+            <p class="n_txt inview op">
               出会いがなければ、最高の一皿は生まれない。
             </p>
-            <p class="n_txt inview op move">
+            <p class="n_txt inview op">
               料理人は一皿をつくるために、様々なつながりを持っている。
               <br />
               どんな食材を使うか。
@@ -309,17 +310,17 @@
               <br class="sp-off" />
               どんな食彩を描くのか。
             </p>
-            <p class="n_txt inview op move">
+            <p class="n_txt inview op">
               ひとつひとつの決断は、人との出会いから生まれている。
               <br class="sp-off" />
               だからこそ、私たちは食の出会いが生まれる場をつくりたい。
             </p>
-            <p class="n_txt inview op move">
+            <p class="n_txt inview op">
               料理人が新たな出会いを活かし、可能性を探求することで
               <br class="sp-off" />
               一皿に物語が生まれ、今までにないものができるはずだ。
             </p>
-            <p class="n_txt inview op move">
+            <p class="n_txt inview op">
               出会いから、世界が注目する食文化を育てよう。
             </p>
           </div>
@@ -584,7 +585,7 @@
           <h2 class="en">Activity<br class="sp_off" />Log</h2>
           <a href="#" class="en vm">View More</a>
           <!-- swiper -->
-          <div class="swiper voice_swiper inview op move">
+          <div class="swiper voice_swiper inview op">
             <div class="swiper-wrapper">
               <!-- 1枚目 -->
               <div class="swiper-slide">
@@ -687,14 +688,152 @@
             </div>
           </div>
           <!-- /swiper -->
-          <div class="swiper-scrollbar02"></div>
+          <div class="swiper-scrollbar">
+            <div class="swiper-scrollbar-drag"></div>
+          </div>
           <div class="pager-area">
-            <div class="button button-prev"></div>
-            <div class="button button-next"></div>
+            <div class="button button-prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+              </svg>
+            </div>
+            <div class="button button-next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </div>
           </div>
         </section>
       </main>
-      <footer></footer>
+      <footer class="footer">
+        <section class="info_area">
+          <h2 class="logo_area">
+            <img src="src/img/logo_white1.png" alt="白い代替ロゴ" />
+          </h2>
+          <div class="link_area">
+            <div class="big_links">
+              <a class="en" href="#"><span>About us</span></a>
+              <a class="en" href="#"><span>History</span></a>
+              <div class="s_links_wrap">
+                <span class="en oc_btn">
+                  Project
+                  <!-- ↓ここにvマークが入る -->
+                  <span></span>
+                </span>
+                <!-- ↓上のProjectをクリックするとactiveのclassがついて見えるようになる -->
+                <!-- クリック時にstyle="max-height: 0px;"→273pxにインラインでスタイルが挿入される -->
+                <div class="small_links">
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>サガマリアージュラボ</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>UREUM SAGA</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>サガマリアージュセミナー</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>サガマリアージュツアー</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>シェフインレジデンスSAGA</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>サガマリアージュアカデミー</span>
+                    <!-- after -->
+                  </a>
+                  <span class="global-nav__sub-title en">Special Event</span>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>SAGAガストロノミー会議</span>
+                    <!-- after -->
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="big_links">
+              <div class="s_links_wrap">
+                <span class="en oc_btn st">
+                  Story
+                  <span></span>
+                </span>
+                <div class="small_links">
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>食</span>
+                    <!-- after -->
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>器</span>
+                    <!-- after --> </a
+                  ><a class="mincho-regular" href="#">
+                    <!-- before -->
+                    <span>料理人</span>
+                    <!-- after -->
+                  </a>
+                </div>
+              </div>
+              <a class="en" href="#">
+                <!-- before -->
+                <span>Activity Log</span>
+                <!-- after -->
+              </a>
+            </div>
+            <div class="sns_links">
+              <a href="#">
+                <!-- before -->
+                <i class="header__sns__icon fa-brands fa-facebook"></i>
+                <!-- after -->
+              </a>
+              <a href="#">
+                <!-- before -->
+                <i class="header__sns__icon fa-brands fa-instagram"></i>
+                <!-- after -->
+              </a>
+            </div>
+          </div>
+        </section>
+        <div class="c-ad_area">
+          <p class="top_txt">
+            運営元：サガマリアージュ推進協議会
+            <br />
+            〒840-8570 佐賀県佐賀市城内1-1-59
+            <br />
+            佐賀県庁 流通・貿易課内
+          </p>
+          <p class="en copy -fz10">© 2024 Saga Mariage</p>
+        </div>
+        <div class="btm_area">
+          <!-- フッターの画像ロゴを入れる（footerの::afterより上） -->
+          <img class="bg" src="src/img/footer-sagamariage.png" alt="" />
+        </div>
+      </footer>
     </div>
     <script type="module" src="/src/main.js" defer></script>
   </body>

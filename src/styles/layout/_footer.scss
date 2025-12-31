@@ -1,0 +1,166 @@
+@use "../base/variables" as vars;
+
+.footer {
+  background-color: vars.$base-black-color;
+  & a {
+    color: #fff;
+  }
+  & p {
+    color: #fff;
+  }
+  & .info_area {
+    position: relative;
+    padding-top: 10rem;
+    margin: 0 auto;
+    transform: translateX(4.2rem);
+    width: clamp(680px, 72.5333333333vw, 1450.666666667px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #fff;
+    z-index: 10;
+    & a {
+      display: block;
+      // --lh: 1.5;
+      position: relative;
+      line-height: calc(var(--lh) * 1em);
+      padding-top: 0.1px;
+      padding-bottom: 0.1px;
+      &::before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        margin-top: calc((1 - var(--lh) * 0.5em));
+      }
+      &::after {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        margin-bottom: calc((1 - var(--lh) * 0.5em));
+      }
+      & span {
+        position: relative;
+        display: inline-block;
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.15)
+        );
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 100%;
+        transition: all 0.4s;
+      }
+    }
+    & h2 {
+      width: 25rem;
+      & img {
+        width: 100%;
+        vertical-align: bottom;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        // CSSで要素を3D空間で回転させた際に、裏返ってスクリーンに面した状態（背面）を表示させずに非表示にするための設定
+      }
+    }
+    & .link_area {
+      width: 47.2%;
+      margin-top: 6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    & .big_links {
+      width: 20rem;
+      min-width: 195px;
+      & a {
+        font-size: 3.2rem;
+        margin-bottom: 2.7rem;
+      }
+    }
+    & .s_links_wrap {
+      & > .en {
+        position: relative;
+        display: block;
+        color: #fff;
+        font-size: 3.2rem;
+        margin-bottom: 2.7rem;
+        & span {
+          position: absolute;
+          left: 4em;
+          top: 2px;
+          bottom: 0;
+          margin: auto;
+          display: inline-block;
+          vertical-align: middle;
+          color: #fff;
+          line-height: 1;
+          width: 8px;
+          height: 8px;
+          border: 1px solid currentColor;
+          border-left: 0;
+          border-bottom: 0;
+          box-sizing: border-box;
+          transition: all 0.4s ease;
+          transform: translateY(-25%) rotate(135deg);
+          transform-origin: center center;
+        }
+        &.st span {
+          left: 3em;
+        }
+      }
+    }
+    & .small_links {
+      opacity: 0; // 最初は非表示
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      &.active {
+        opacity: 1; // jsでactiveクラスをつけると表示される
+      }
+      // max-heightをJSで書き換えて表示するものと思われる
+      & a {
+        font-size: 1.3rem;
+        margin-bottom: 1.8rem;
+      }
+    }
+    & .sns_links {
+      width: 4.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      & a {
+        display: block;
+        width: 1.5rem;
+      }
+    }
+  } //info_areaここまで
+
+  & .c-ad_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 4.8rem auto 16.4rem;
+    width: clamp(718.75px, 76.6666666667vw, 1533.3333333333px);
+    opacity: 0.5;
+    & .top_txt {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  } // .c-ad_areaここまで
+
+  & .btm_area {
+    position: relative;
+    height: 114px;
+    width: 100%;
+    z-index: 1;
+    & .bg {
+      position: absolute;
+      z-index: 300;
+      max-width: 90%;
+      margin: auto;
+      bottom: 0;
+      right: 0;
+      object-fit: cover;
+    }
+  }
+}

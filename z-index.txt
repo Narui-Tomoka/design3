@@ -20,3 +20,5 @@ z-indexの値を整理するためのメモ
 
 .ps-area .slide a .img_area 10
 .ps-area .slide a .text_area 10
+
+.footer .info_area 10
