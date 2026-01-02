@@ -251,6 +251,16 @@
       padding-bottom: 152px;
       margin-right: 36px;
       box-sizing: border-box;
+      @include mix.hover {
+        .day,
+        .slide__title,
+        .slide__text {
+          color: vars.$theme-color-or;
+        }
+        .swiper-slide__img .fit-img {
+          transform: scale(1.05);
+        }
+      }
       &::after {
         content: "";
         display: block;
@@ -389,6 +399,17 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    @include mix.hover {
+      .img_area img {
+        transform: scale(1.05);
+      }
+      .img_area:before {
+        opacity: 0.3;
+      }
+      .square .svg {
+        transform: translateX(3px);
+      }
+    }
     & div {
       position: relative;
       width: 88.8888888889%; // devtoolから
@@ -456,6 +477,7 @@
     & .svg {
       width: 11px;
       height: auto;
+      transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
       & path {
         stroke: #000; // 「>」の色を変更
       }
@@ -543,14 +565,25 @@
     width: 2376px; // storyは幅だけ上書きする（1188px）
     letter-spacing: 0;
     &.story {
-      width: 1188px; // 半角スペースなし・・・「かつ」 幅を上書き
+      width: 1188px; // 半角スペースなし・・・「かつ」。Projectにも適用されるwidthを上書き
       margin: 0 auto; // projectより真ん中に。
     }
+    // ↓.swiper-slide
     & a {
       display: block;
       position: relative;
       width: 360px;
       margin-left: 3.6rem;
+      @include mix.hover {
+        .img_area .fit-img {
+          transform: scale(1.05);
+        }
+        .text-area .mincho-regular,
+        .text-area .n_txt,
+        .text-area .vm {
+          color: vars.$theme-color-or;
+        }
+      }
       & .img_area {
         position: relative;
         overflow: hidden;

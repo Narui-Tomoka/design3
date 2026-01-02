@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .join("");
     el.innerHTML = newContent;
-    console.log(newContent);
   });
 });
 

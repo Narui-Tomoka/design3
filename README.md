@@ -9,11 +9,11 @@
 ## 使用言語
 
 - HTML
-- CSS（SCSS）
+- CSS（scss）
 - JavaScript
 - jQuery（CDN 利用）
-- inview プラグイン（CDN 利用）
-- Swiper プラグイン（CDN 利用）
+- jQuery inview プラグイン（CDN 利用）
+- Vanilla JS Swiper プラグイン（CDN 利用）
 
 ## 開発環境
 
@@ -22,6 +22,13 @@
 ## マークダウン記法プレビュー方法
 
 - markdownlint（VS Code 拡張機能）
+
+## お手本のサイトとの相違点
+
+- 画像の差し替え（スライドショー実装があるため https://placehold.jp/ ではなくスマホで撮影した画像を使用）
+- section concept の L 字型の背景画像は「写真 AC」（ https://www.photo-ac.com/https://www.photo-ac.com/ ）の素材を使用
+- fv に重なる「SAGAMARIAGE」の文字は一文字ずつの画像になっていますが、今回はテキストで実装
+- フッター一番下の「佐賀の食と器の～」の部分はテキストですが、今回は画像で実装
 
 ## 今回の課題で気づいたこと
 
@@ -102,3 +109,12 @@ CSS だけでは要素の高さを取得できないため、
 
 といった問題があり、
 このようなケースでは JavaScript からスタイルを書き換えるほうがメリットが多い と感じた。
+
+## 今回の課題で新しく知ったこと
+
+### :hover と@media(hover: hover)の違い
+
+### jQuery プラグイン「inview」
+
+inview プラグインで手軽に画面に入った時の動作を実装できる。
+JavaScript の Intersection Observer より簡単に利用できる。
