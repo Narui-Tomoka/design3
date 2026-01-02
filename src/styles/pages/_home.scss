@@ -3,7 +3,6 @@
 @use "../base/mixins" as mix;
 
 // ページ固有のスタイル
-
 .fv {
   position: relative;
   z-index: 50;
@@ -14,7 +13,7 @@
   min-height: 700px;
   overflow: hidden;
   background: #000;
-  // 疑似要素をimgの上に重ねて少し暗くしている
+
   &::before {
     content: "";
     display: block;
@@ -35,6 +34,7 @@
     bottom: -0.2em;
     z-index: 10;
   }
+
   &__subtitle {
     position: absolute;
     width: fit-content;
@@ -46,29 +46,25 @@
     line-height: 1;
     height: auto;
     overflow: hidden;
+
     & .char {
       display: inline-block;
-      opacity: 0;
-      animation: fadeUp 0.05s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+      opacity: 0; // 初期状態は非表示
+      // ↓ 下記の .fv.move のタイミングで animation が実行
     }
-    // 佐賀の～の部分のアニメーション
+
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(0.3em);
+        transform: translateY(100%);
       }
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    // 文字数分ループ（今回は18文字なので余裕もって20）
-    @for $i from 1 through 20 {
-      .char:nth-child(#{$i}) {
-        animation-delay: 0.05s * $i;
-      }
-    }
-  } // サブタイトル閉じ
+  }
+
   &__title {
     position: relative;
     text-align: right;
@@ -79,22 +75,42 @@
     height: auto;
     overflow: hidden;
     white-space: nowrap;
+
     & .text {
-      // SAGA MARIAGE
+      // 【アニメーション前】
       display: block;
       opacity: 0;
-      transform: translateY(100%);
+      transform: translateY(130%);
       transition: transform 0.55s cubic-bezier(0.39, 0.575, 0.565, 1),
         opacity 0.55s cubic-bezier(0.39, 0.575, 0.565, 1);
     }
-    &.move {
-      & .text {
-        transition-delay: 1.4s;
-        transform: translateY(15%);
-        opacity: 1;
+  }
+
+  // ==========================================
+  // inviewで.fv に .move がついた時のアニメーション
+  // ==========================================
+  &.move {
+    // サブタイトルの1文字ずつのアニメーション
+    .fv__subtitle .char {
+      animation: fadeUp 0.55s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+    }
+
+    // メインタイトルのアニメーション
+    .fv__title .text {
+      // 【アニメーション後】
+      transition-delay: 1.4s;
+      transform: translateY(15%);
+      opacity: 1;
+    }
+
+    // 1文字ずつの遅延設定を .move 時のみ適用
+    @for $i from 1 through 20 {
+      .fv__subtitle .char:nth-child(#{$i}) {
+        animation-delay: 0.05s * $i;
       }
     }
   }
+
   &__img {
     position: absolute;
     z-index: 1;
@@ -115,44 +131,26 @@
     overflow: hidden;
 
     img {
-      position: absolute; // inset,width,heightといっしょに使っている
-      inset: 0; // top,right,bottom,leftを一気に指定できる
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0; // 最初は非表示→CSSアニメーションで徐々に表示していく
-      // 5枚の写真を20秒でループ
+      opacity: 0;
       --animation-duration: 20s;
       --animation-delay-base: calc(var(--animation-duration) / 5);
-
       animation: main var(--animation-duration) linear infinite;
     }
 
-    /* 1枚目（ダミー　CSSアニメ動作安定用） */
     &:nth-child(1) img {
       opacity: 1;
       animation: firstImageAnimation var(--animation-duration) linear infinite;
     }
 
-    /* 2枚目以降（実際表示される部分） */
-    &:nth-child(2) img {
-      animation-delay: calc(var(--animation-delay-base) * 1);
-    }
-
-    &:nth-child(3) img {
-      animation-delay: calc(var(--animation-delay-base) * 2);
-    }
-
-    &:nth-child(4) img {
-      animation-delay: calc(var(--animation-delay-base) * 3);
-    }
-
-    &:nth-child(5) img {
-      animation-delay: calc(var(--animation-delay-base) * 4);
-    }
-
-    &:nth-child(6) img {
-      animation-delay: calc(var(--animation-delay-base) * 5);
+    @for $i from 2 through 6 {
+      &:nth-child(#{$i}) img {
+        animation-delay: calc(var(--animation-delay-base) * (#{$i} - 1));
+      }
     }
   }
 }
@@ -182,7 +180,7 @@
   }
 }
 
-// 最初のダミー画像用　実際は表示されない
+// 最初のダミー画像用。一度だけ見える
 @keyframes firstImageAnimation {
   0% {
     opacity: 1;
