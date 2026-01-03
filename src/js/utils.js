@@ -23,6 +23,19 @@ $(document).ready(function () {
     $(this).addClass("move");
   });
 });
+// fvのタイトル用。ロード時にinview→moveのclass付与するとうまく動かないのでタイミング調整
+$(document).ready(function () {
+  $(".fv-inview").on("inview", function (event, isInView) {
+    if (isInView) {
+      // 要素が画面に入った（isInViewがtrue）とき
+      var $target = $(this); // setTimeout内でも使えるように変数に格納
+
+      setTimeout(function () {
+        $target.addClass("move");
+      }, 600); // ロードと同時にならないように
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const sLinksWraps = document.querySelectorAll(".s_links_wrap");
