@@ -21,6 +21,11 @@
       height: 100%;
     }
   }
+  @include mix.mq(tab) {
+    width: 14px;
+    left: 21px;
+    height: 36px;
+  }
   &__border {
     display: block;
     position: absolute;
@@ -38,11 +43,17 @@
       margin: auto; // 左右中央揃えに必須
       height: 32px;
       background: vars.$theme-color-or;
+      @include mix.mq(tab) {
+        height: 24px;
+      }
     }
     &:nth-child(3) {
       right: 0;
       height: 24px;
       background: vars.$theme-color-bl;
+      @include mix.mq(tab) {
+        height: 16px;
+      }
     }
   }
 }

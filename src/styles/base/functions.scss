@@ -1,7 +1,32 @@
 // 割り算はDart Sass2.0以降は「/」でできなくなるので関数「math」を使用する
+@use "./mixins" as mix;
 @use "sass:math";
 
 // 幅計算用
 @function get_calc($size1, $size2) {
   @return math.div($size1, $size2) * 100%;
+}
+
+// :root内に宣言したCSS変数を各所で利用できる
+:root {
+  --base-pc-width: 1440;
+  --ml: 144px;
+  --lvw: 4.89vw;
+  --mlvw: calc(144px + 4.89vw);
+
+  --fv-gradation: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+// メディアクエリ内の記述では自動的に↑の変数が書き換わる
+// →メンテナンス性の向上
+@include mix.mq(tab) {
+  :root {
+    --ml: 55px;
+    --lvw: 2.666vw;
+    --mlvw: calc(55px + 2.666vw);
+  }
 }

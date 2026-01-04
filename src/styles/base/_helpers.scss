@@ -101,6 +101,12 @@
   position: absolute;
   left: 0;
   bottom: 24rem;
+  @include mix.mq(tab) {
+    position: absolute;
+    left: calc(53vw + 30px); // スクロールバーの30px右
+    transform: translateY(8px);
+    bottom: 21.3333333333vw;
+  }
 }
 .pager-area {
   @include mix.mq(pc) {
@@ -110,13 +116,22 @@
   }
 }
 .pager-area {
+  display: flex;
+  justify-content: space-between;
   @include mix.mq(pc) {
     width: 70px;
+  }
+  @include mix.mq(tab) {
+    width: 50px;
   }
   & .button {
     @include mix.mq(pc) {
       width: 24px;
       height: 37.7px; // どうしてもわからないのでpx指定
+    }
+    @include mix.mq(tab) {
+      width: 15px;
+      height: 24px;
     }
   }
 }
@@ -149,12 +164,35 @@
     background-color: #e7e7e7;
   }
 }
+@include mix.mq(tab) {
+  .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal,
+  .swiper-scrollbar02,
+  .swiper-scrollbar02.swiper-scrollbar-horizontal {
+    position: relative;
+    margin-top: 4.8rem;
+    width: 53vw;
+    height: 1px;
+    background-color: #e7e7e7;
+  }
+}
+
 @include mix.mq(pc) {
   .topics .swiper-scrollbar.swiper-scrollbar-horizontal {
     bottom: 80px;
   }
 }
 
+@include mix.mq(pc) {
+  .swiper-scrollbar-drag {
+    background-color: vars.$theme-color-or;
+  }
+}
+@include mix.mq(tab) {
+  .swiper-scrollbar-drag {
+    background-color: vars.$theme-color-or;
+  }
+}
 // ==============================
 // ↑swiper関係ここまで↑
 // ==============================
@@ -184,11 +222,15 @@
   color: #000;
   letter-spacing: 0;
   transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
+  font-size: clamp(12px, 3.2vw, 15px);
 }
 
 // レスポンシブ関係
 .pc-off {
   display: none !important;
+  @include mix.mq(tab) {
+    display: block !important;
+  }
 }
 .sp-off {
   display: block !important;

@@ -8,11 +8,21 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   padding: 40px 0 0 144px; //144pxは左側のメニュー幅と同じ幅
+  @include mix.mq(tab) {
+    padding-top: 20px;
+    padding-left: 55px;
+    height: vars.$tab-header-height;
+  }
   & .logo {
     position: absolute;
     left: 144px;
     top: 60px;
     width: 137px;
+    @include mix.mq(tab) {
+      left: 55px;
+      top: 20px;
+      width: 100px;
+    }
     & img {
       display: block;
       width: 100%;
@@ -24,12 +34,18 @@
     position: relative;
     display: flex;
     padding-right: 4.8vw;
+    @include mix.mq(tab) {
+      display: none;
+    }
   }
   &__nav {
     display: flex;
     flex-direction: column;
     width: 8rem;
     margin-right: 26.0416666667%;
+    @include mix.mq(tab) {
+      display: none;
+    }
     &__item {
       display: block;
       font-size: 1.5rem;
@@ -64,6 +80,11 @@
     width: 80px;
     right: 4.8611111111vw; // デザイン時のpx値を換算した結果か？
     margin: auto;
+    @include mix.mq(tab) {
+      top: 25px;
+      right: 5.3333333333vw;
+      width: 65px;
+    }
     & div {
       display: block;
       text-align: left;
@@ -75,7 +96,10 @@
         letter-spacing: 0;
         line-height: 1;
         width: 100%;
-        // 下向き矢印
+        @include mix.mq(tab) {
+          font-size: 1.2rem;
+        }
+        // 下向き矢印を2本線で表現
         &::before {
           content: "";
           display: block;
@@ -87,6 +111,9 @@
           bottom: 3px;
           margin: auto;
           background-color: #999;
+          @include mix.mq(tab) {
+            bottom: 2px;
+          }
         }
         &::after {
           content: "";
@@ -99,6 +126,9 @@
           bottom: 3px;
           margin: auto;
           background-color: #999;
+          @include mix.mq(tab) {
+            bottom: 2px;
+          }
         }
       }
     }
@@ -115,6 +145,9 @@
       text-overflow: ellipsis; // 指定した領域からはみ出したテキストの末尾に省略記号「…」を表示させる。
       border: none; // 要素の枠線自体を消す
       outline: none; // 要素のフォーカス時の輪郭線（アウトライン）を消す
+      @include mix.mq(tab) {
+        font-size: 13px;
+      }
     }
   }
 }

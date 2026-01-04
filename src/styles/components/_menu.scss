@@ -1,4 +1,5 @@
 @use "../base/variables" as vars;
+@use "../base/mixins" as mix;
 
 // 左側のメニュー
 
@@ -10,11 +11,18 @@
   top: 0;
   padding-top: 29px;
   z-index: 500;
+  @include mix.mq(tab) {
+    width: 55px;
+    padding-top: 15px;
+  }
   & a {
     display: block;
     text-align: center;
     & img {
       width: 89px;
+      @include mix.mq(tab) {
+        width: 35px;
+      }
     }
   }
 }
