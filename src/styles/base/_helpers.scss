@@ -145,12 +145,11 @@
   left: auto;
 }
 
-@include mix.mq(pc) {
-  .pager-area .swiper-button-disabled path {
-    stroke: #333;
-    opacity: 0.5;
-  }
+.pager-area .swiper-button-disabled path {
+  stroke: #333;
+  opacity: 0.5;
 }
+
 // スクロールバー
 @include mix.mq(pc) {
   .swiper-scrollbar,

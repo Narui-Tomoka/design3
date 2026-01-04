@@ -48,14 +48,14 @@
         display: block;
         height: 0;
         width: 0;
-        margin-top: calc((1 - var(--lh) * 0.5em));
+        margin-top: calc((1 - var(--lh)) * 0.5em);
       }
       &::after {
         content: "";
         display: block;
         height: 0;
         width: 0;
-        margin-bottom: calc((1 - var(--lh) * 0.5em));
+        margin-bottom: calc((1 - var(--lh)) * 0.5em);
       }
       & span {
         position: relative;
@@ -217,6 +217,7 @@
       width: 75.7333333333vw;
       min-width: 142px;
       text-align: left;
+      height: 56.4px;
     }
     & .bg {
       position: absolute;

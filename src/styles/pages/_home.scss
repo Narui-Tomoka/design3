@@ -64,7 +64,7 @@
       font-size: 3vw;
     }
     @include mix.mq(tab) {
-      top: calc(-1em - 15px);
+      top: calc(-1em - -3px);
       height: 1em;
       letter-spacing: 0.15em;
       left: 0;
@@ -110,6 +110,9 @@
     transition: transform 0.55s cubic-bezier(0.39, 0.575, 0.565, 1),
       opacity 0.55s cubic-bezier(0.39, 0.575, 0.565, 1);
     font-size: clamp(26px, 16vw, 100px);
+    @include mix.mq(pc) {
+      white-space: nowrap;
+    }
   }
 
   // ==========================================
@@ -265,27 +268,20 @@
     }
     & span {
       font-size: 2.4rem;
+      font-size: clamp(14px, calc(14 / 375) * 100vw, 16px);
     }
   }
 
   // section topicsの中にあるswiper
-  & .swiper {
-    & .inview.op.move {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.8s, color 0.4s var(--easeOutSine);
-    }
-    &__wrapper {
-      display: flex;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      transition-property: transform;
-      box-sizing: content-box;
-    }
-    // slideにhoverするとcolor変化やimgの拡大アニメーションがあるが、他の要素とまとめて「@media (hover: hover)」にまとめられている
-    &-slide {
+  & .swiper-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition-property: transform;
+    box-sizing: content-box;
+    & .swiper-slide {
       width: 245px;
       padding-right: 36px;
       padding-bottom: 152px;
@@ -306,6 +302,7 @@
           transform: scale(1.05);
         }
       }
+      // スライド右側の線
       &::after {
         content: "";
         display: block;
@@ -341,11 +338,24 @@
           letter-spacing: 0.05em;
           margin-bottom: 3.6rem;
         }
+        &::before {
+          content: "";
+          display: block;
+          height: 0;
+          width: 0;
+          margin-top: calc((1 - var(--lh)) * 0.5em);
+        }
+        &::after {
+          content: "";
+          display: block;
+          height: 0;
+          width: 0;
+          margin-bottom: calc((1 - var(--lh)) * 0.5em);
+        }
       }
-      // .n_txtと同じ
-      & .slide__text {
+      & .n_txt {
         font-size: 1.4rem;
-        --lh: 1.4;
+        --lh: 1.6;
         font-weight: 500;
         margin-bottom: 4.8rem;
         position: relative;
@@ -418,6 +428,13 @@
       font-size: clamp(24px, calc((24 / 375) * 100vw), 26px);
       margin-bottom: 4rem;
     }
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      margin-top: calc((1 - var(--lh)) * 0.5em);
+    }
     &::after {
       content: "";
       display: block;
@@ -428,6 +445,9 @@
     & span {
       font-size: 2.8rem;
       font-weight: 600;
+      @include mix.mq(tab) {
+        font-size: clamp(20px, calc((20 / 375) * 100vw), 22px);
+      }
     }
   }
   // .n_txtは_helpers.scssに基本のスタイルを記述
@@ -438,13 +458,31 @@
     line-height: calc(var(--lh) * 1em);
     padding-top: 0.1px;
     padding-bottom: 0.1px;
+    letter-spacing: 0.05em;
     @include mix.mq(tab) {
       font-size: clamp(14px, calc((14 / 375) * 100vw), 16px);
       --lh: 1.8;
     }
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      margin-top: calc((1 - var(--lh)) * 0.5em);
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      margin-bottom: calc((1 - var(--lh)) * 0.5em);
+    }
     // 後に続くpタグのみ対象にする
     & + p {
       margin-top: 4.8rem;
+      @include mix.mq(tab) {
+        margin-top: 2.5rem;
+      }
     }
   }
 }
@@ -455,8 +493,8 @@
   display: flex;
   flex-wrap: wrap; // レスポンシブ対応のためか？
   justify-content: space-between;
-  width: calc(100% - vars.$menu-margin);
-  margin-left: vars.$menu-margin;
+  width: calc(100% - var(--ml));
+  margin-left: var(--ml);
   z-index: 10;
   & a {
     position: relative;
@@ -630,8 +668,8 @@
 // project/story
 .ps-area {
   position: relative;
-  width: calc(100% - vars.$menu-margin);
-  margin-left: vars.$menu-margin;
+  width: calc(100% - var(--ml));
+  margin-left: var(--ml);
   padding-top: 16rem;
   padding-bottom: 0;
   @include mix.mq(tab) {
@@ -772,12 +810,20 @@
     margin-top: 7rem;
     padding-top: 0;
     padding-bottom: 24rem;
+    @include mix.mq(tab) {
+      margin-top: 6rem;
+      padding-bottom: 4rem;
+      margin-bottom: 21.3333333333%;
+    }
     & .swiper-wrapper {
       & .swiper-slide {
         padding-top: 3.2rem;
         padding-right: 0;
         padding-bottom: 0;
         border-top: 1px solid #e0e0e0;
+        @include mix.mq(tab) {
+          padding-top: 2rem;
+        }
         &::after {
           display: none; // スライド右側の線を消す
         }
@@ -787,6 +833,10 @@
           font-weight: 500;
           color: vars.$theme-color-gr;
           margin-bottom: 1.6rem;
+          @include mix.mq(tab) {
+            font-size: clamp(10px, calc((10 / 375) * 100vw), 12px);
+            margin-bottom: 1.6rem;
+          }
         }
         & .img_area {
           position: relative;
@@ -802,6 +852,10 @@
           letter-spacing: 0;
           margin-bottom: 2rem;
           font-weight: 500;
+          @include mix.mq(tab) {
+            font-size: clamp(14px, calc((14 / 375) * 100vw), 16px);
+            margin-bottom: 1.6rem;
+          }
         }
         & .n_txt {
           font-size: 1.4rem;
@@ -814,9 +868,16 @@
           transition: 0.4s color cubic-bezier(0.39, 0.575, 0.565, 1);
           margin-bottom: 0;
           letter-spacing: 0.05em;
+          @include mix.mq(tab) {
+            font-size: clamp(12px, calc((12 / 375) * 100vw), 14px);
+          }
         }
         & .day {
           color: #111;
+          @include mix.mq(tab) {
+            font-size: clamp(10px, calc((10 / 375) * 100vw), 12px);
+            margin-bottom: 0.2rem;
+          }
         }
       }
     }
@@ -831,6 +892,9 @@
         top: 9px;
         font-size: clamp(12px, 3.2vw, 15px);
       }
+    }
+    & .pager-area {
+      bottom: 36px;
     }
   }
 }

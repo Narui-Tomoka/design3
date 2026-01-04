@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     grabCursor: true,
     speed: 800, // スピードを800ミリ秒に設定
     scrollbar: {
-      el: ".voice_swiper .swiper-scrollbar",
+      el: ".voice_slide_area .swiper-scrollbar",
     },
     navigation: {
       nextEl: ".voice_slide_area .button-next",
