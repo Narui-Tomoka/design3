@@ -22,8 +22,6 @@
 - HTML
 - CSS（SCSS）
 - JavaScript
-- jQuery（CDN 利用）
-- jQuery inview プラグイン（CDN 利用）
 - Vanilla JS Swiper プラグイン（CDN 利用）
 
 ### 開発環境・ツール
@@ -38,7 +36,7 @@
   （スライドショー実装のため https://placehold.jp/ ではなく、スマホで撮影した画像を使用）
 - section「concept」の L 字型背景画像は「写真 AC」の素材を使用  
   https://www.photo-ac.com/
-- fv に重なる「SAGAMARIAGE」の文字  
+- fv に重なる「SAGA MARIAGE」の文字  
   → お手本は一文字ずつ画像だが、今回はテキストで実装
 - フッター最下部「佐賀の食と器の～」  
   → お手本はテキストだが、今回は画像で実装
@@ -188,7 +186,8 @@ CSS 変数（カスタムプロパティ）を定義するために使用する�
 画面内に要素が入ったタイミングでの処理を  
 手軽に実装できるプラグイン。
 
-Intersection Observer より簡単に扱えると感じた。
+Intersection Observer より簡潔な記述で実装できるが、今回はビルド後に動作しなかったため  
+Intersection Observer API を使用。
 
 ## Vite を使用した実機確認方法
 

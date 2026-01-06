@@ -17,25 +17,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 要素をフェードインさせるためのjQuery（プラグイン「jquery.inview」使用）
-$(document).ready(function () {
-  $(".inview").on("inview", function () {
-    $(this).addClass("move");
-  });
-});
-// fvのタイトル用。ロード時にinview→moveのclass付与するとうまく動かないのでタイミング調整
-$(document).ready(function () {
-  $(".fv-inview").on("inview", function (event, isInView) {
-    if (isInView) {
-      // 要素が画面に入った（isInViewがtrue）とき
-      var $target = $(this); // setTimeout内でも使えるように変数に格納
+// プラグイン「jquery.inview」がうまく動かなかったのでIntersectionObserverに置き換え
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".inview, .fv-inview");
 
-      setTimeout(function () {
-        $target.addClass("move");
-      }, 700); // ロードと同時にならないように
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("fv-inview")) {
+            setTimeout(() => {
+              entry.target.classList.add("move");
+            }, 700);
+          } else {
+            entry.target.classList.add("move");
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
     }
-  });
+  );
+
+  targets.forEach((el) => observer.observe(el));
 });
+// IntersectionObserverここまで
 
 document.addEventListener("DOMContentLoaded", () => {
   const sLinksWraps = document.querySelectorAll(".s_links_wrap");
