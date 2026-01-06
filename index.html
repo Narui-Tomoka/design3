@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>サガマリアージュ</title>
+    <link rel="icon" href="src/img/saga_favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,8 +31,8 @@
           <nav class="header__nav">
             <a class="header__nav__item en" href="#">About us</a>
             <a class="header__nav__item en" href="#">History</a>
-            <a class="header__nav__item en" href="#">Project</a>
-            <a class="header__nav__item en" href="#">Story</a>
+            <a class="header__nav__item en" href="#project">Project</a>
+            <a class="header__nav__item en" href="#story">Story</a>
           </nav>
           <div class="header__sns">
             <a class="header__sns__item" href="#"
@@ -280,7 +281,7 @@
                 交流地。
               </span>
             </h2>
-            <!-- ↓jQueryプラグインでmoveのclassをつけることでふわっと表示させる -->
+            <!-- ↓IntersectionObserverでmoveのclassをつけることでふわっと表示させる -->
             <p class="n_txt inview op">
               出会いがなければ、最高の一皿は生まれない。
             </p>
@@ -490,7 +491,7 @@
               </div>
             </div>
           </div>
-          <div class="ps-slide_area story-slide">
+          <div id="story" class="ps-slide_area story-slide">
             <h2 class="en">story</h2>
             <div class="slide-wrap swiper story-slider">
               <div class="slide story swiper-wrapper">

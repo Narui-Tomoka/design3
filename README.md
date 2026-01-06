@@ -30,16 +30,16 @@
 - Autoprefixer（VS Code 拡張機能）
 - markdownlint（VS Code 拡張機能／Markdown プレビュー用）
 
-## お手本サイトとの相違点
+## 課題サイトとの相違点
 
 - 画像差し替え  
   （スライドショー実装のため https://placehold.jp/ ではなく、スマホで撮影した画像を使用）
 - section「concept」の L 字型背景画像は「写真 AC」の素材を使用  
   https://www.photo-ac.com/
 - fv に重なる「SAGA MARIAGE」の文字  
-  → お手本は一文字ずつ画像だが、今回はテキストで実装
+  → 課題サイトでは一文字ずつ画像ですが、今回はテキストで実装
 - フッター最下部「佐賀の食と器の～」  
-  → お手本はテキストだが、今回は画像で実装
+  → 課題サイトではテキストですが、今回は画像で実装
 
 ## 備忘録
 
@@ -181,13 +181,18 @@ CSS 変数（カスタムプロパティ）を定義するために使用する�
 
 ## 使用した JavaScript ライブラリ
 
-### jQuery プラグイン「inview」
+### vanilla JS プラグイン 「swiper」
 
-画面内に要素が入ったタイミングでの処理を  
-手軽に実装できるプラグイン。
+スライダー作成の定番プラグイン。  
+jQuery プラグイン「Slick」と比較すると、ドラッグ量とスライド移動量が比例するので、多くの情報を見せたい場合に適している。スマホ利用が多い現在は操作感も好まれる。  
+swiper 動作参考： https://sagamariage.jp/  
+Slick 動作参考: https://www.radishbo-ya.co.jp/item/cc/top.html
 
-Intersection Observer より簡潔な記述で実装できるが、今回はビルド後に動作しなかったため  
-Intersection Observer API を使用。
+### jQuery プラグイン 「inview」
+
+画面内に要素が入ったタイミングでの処理を手軽に実装できるプラグイン。
+
+Intersection Observer より簡潔な記述で実装できるが、今回はビルド後に動作しなかったため Intersection Observer API を使用。
 
 ## Vite を使用した実機確認方法
 
@@ -225,7 +230,13 @@ npm run build
 
 npm run preview -- --host
 
-Network: http://192.168.1.10:4173/（例）
+Network: http://192.168.1.10:4173/（例） にアクセス
+
+##### 方法 B：簡易 HTTP サーバー（汎用）
+
+dist ディレクトリで npx serve dist を実行する
+
+Network: http://192.168.1.10:4173/（例） にアクセス
 
 ### うまくいかない場合
 

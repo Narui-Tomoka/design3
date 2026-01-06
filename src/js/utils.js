@@ -3,16 +3,15 @@
 // 「佐賀の～」を一文字ずつspanタグで分割してclass = "char"を付与する処理
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".d-txt").forEach((el) => {
+    // .d-txtそれぞれに以下の処理を実行
     const text = el.textContent.trim(); // 余計な空白や改行を除去して純粋に文字だけを処理
     const newContent = text
-      .split("")
+      .split("") // 一文字ずつ分割
       .map((char) => {
-        if (char === " ") {
-          return char;
-        }
-        return `<span class ="char">${char}</span>`;
+        // mapは新しい配列を生成する
+        return `<span class ="char">${char}</span>`; // 分割した文字をspanタグに入れる
       })
-      .join("");
+      .join(""); // 作った配列をくっつける
     el.innerHTML = newContent;
   });
 });
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             entry.target.classList.add("move");
           }
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // 一度処理したら監視不要にする
         }
       });
     },
@@ -60,15 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleButton.addEventListener("click", () => {
         if (smallLinks.classList.contains("active")) {
           // アクティブ状態なら閉じる
-          smallLinks.style.maxHeight = "0px";
-          smallLinks.classList.remove("active");
-          toggleButton.classList.remove("active");
+          smallLinks.style.maxHeight = "0px"; // 高さを0に
+          smallLinks.classList.remove("active"); // active を取り除く
+          toggleButton.classList.remove("active"); // active を取り除く
         } else {
           // 非アクティブ状態なら高さを設定して開く
-          const scrollHeight = smallLinks.scrollHeight;
-          smallLinks.style.maxHeight = scrollHeight + "px";
-          smallLinks.classList.add("active");
-          toggleButton.classList.add("active");
+          const scrollHeight = smallLinks.scrollHeight; // scrollHeightはpaddingまでの高さを取得
+          smallLinks.style.maxHeight = scrollHeight + "px"; // 取得した高さにsmallLinksの高さを書き換える
+          smallLinks.classList.add("active"); // activeつける
+          toggleButton.classList.add("active"); // activeつける
         }
       });
     }

@@ -886,6 +886,7 @@
         }
         & .day {
           color: #111;
+          margin-bottom: 0.8rem;
           @include mix.mq(tab) {
             font-size: clamp(10px, calc((10 / 375) * 100vw), 12px);
             margin-bottom: 0.2rem;

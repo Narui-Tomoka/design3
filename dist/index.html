@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>サガマリアージュ</title>
+    <link rel="icon" href="./assets/saga_favicon-DI_mSycK.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,8 +20,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script type="module" crossorigin src="./assets/index-BhnzWasN.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CljqV1Xh.css">
+    <script type="module" crossorigin src="./assets/index-DKEyyUZf.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-cvWYECEO.css">
   </head>
   <body>
     <div class="all-wrap">
@@ -32,8 +33,8 @@
           <nav class="header__nav">
             <a class="header__nav__item en" href="#">About us</a>
             <a class="header__nav__item en" href="#">History</a>
-            <a class="header__nav__item en" href="#">Project</a>
-            <a class="header__nav__item en" href="#">Story</a>
+            <a class="header__nav__item en" href="#project">Project</a>
+            <a class="header__nav__item en" href="#story">Story</a>
           </nav>
           <div class="header__sns">
             <a class="header__sns__item" href="#"
@@ -282,7 +283,7 @@
                 交流地。
               </span>
             </h2>
-            <!-- ↓jQueryプラグインでmoveのclassをつけることでふわっと表示させる -->
+            <!-- ↓IntersectionObserverでmoveのclassをつけることでふわっと表示させる -->
             <p class="n_txt inview op">
               出会いがなければ、最高の一皿は生まれない。
             </p>
@@ -492,7 +493,7 @@
               </div>
             </div>
           </div>
-          <div class="ps-slide_area story-slide">
+          <div id="story" class="ps-slide_area story-slide">
             <h2 class="en">story</h2>
             <div class="slide-wrap swiper story-slider">
               <div class="slide story swiper-wrapper">
