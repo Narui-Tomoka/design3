@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サガマリアージュ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Old+Mincho:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      type="text/javascript"
+      src="./src/js/jquery.inview.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script type="module" crossorigin src="./assets/index-Cfndtaq4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CljqV1Xh.css" />
+  </head>
+  <body>
+    <div class="all-wrap">
+      <header class="header">
+        <a class="logo" href="#">
+          <img src="./assets/shonanmariage-X8BJmHwR.png" alt="代替ロゴ" />
+        </a>
+        <div class="header__link-area">
+          <nav class="header__nav">
+            <a class="header__nav__item en" href="#">About us</a>
+            <a class="header__nav__item en" href="#">History</a>
+            <a class="header__nav__item en" href="#">Project</a>
+            <a class="header__nav__item en" href="#">Story</a>
+          </nav>
+          <div class="header__sns">
+            <a class="header__sns__item" href="#"
+              ><i class="header__sns__icon fa-brands fa-facebook"></i
+            ></a>
+            <a class="header__sns__item" href="#"
+              ><i class="header__sns__icon fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <!-- ↓言語選択機能 -->
+        <div class="header__lang">
+          <div>
+            <p class="en">Language</p>
+          </div>
+          <select name="" id="#">
+            <option value="Select Language" selected="selected">
+              Select Language
+            </option>
+            <option value="#">日本語</option>
+            <option value="#">English</option>
+          </select>
+        </div>
+      </header>
+
+      <!-- 左側の3色のロゴがある部分 -->
+      <nav class="fix-nav">
+        <a class="fix-nav__icon" href="#">
+          <img src="./assets/logo-BJTHOrz8.png" alt="logo" />
+        </a>
+      </nav>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger" id="js-hamburger">
+        <!-- ↓CSSで3本線にする -->
+        <span class="hamburger__border"></span>
+        <span class="hamburger__border"></span>
+        <span class="hamburger__border"></span>
+      </div>
+      <!-- ↓ここは時間があれば実装する部分。ハンバーガーメニュー開いたときのメニュー。
+      <nav class="global-nav"></nav> -->
+      <main>
+        <section id="fv" class="fv fv-inview">
+          <!-- 文字がアニメーションで表示される -->
+          <div class="fv__title-area">
+            <span class="fv__subtitle mincho-regular d-txt">
+              <!-- JSでspanタグに分割してCSSで一文字ずつ遅延させて表示 -->
+              佐賀の食と器の可能性を探る、交流地。
+            </span>
+            <!-- ↓アルファベットの部分は一気に下からアニメーションして表示 -->
+            <h1 class="fv__title en">
+              <span class="text">SAGA <br class="pc-off" />MARIAGE</span>
+            </h1>
+          </div>
+          <div class="fv__img left">
+            <!-- figureタグは図やイラストのまとまりを示すタグ -->
+            <!-- 1枚目はcssアニメを安定させる役割で2回目以降は表示されない -->
+            <!-- →2週目以降は5枚でループする -->
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image19-DzTl91WC.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image13-3ejIj3L-.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image27-DajXOEEc.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image17-C8cQOXo3.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image7-EQDrMa6K.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/image6-BcQHt3Lb.jpeg" alt="" />
+            </figure>
+          </div>
+          <div class="fv__img right">
+            <figure class="fv__item">
+              <img class="img" src="./assets/image3-C0ePrD4s.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/image2-dtH_hNkY.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/image7-BzRVEt-v.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image30-fk31vC0R.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image8-PFqo_haX.jpeg" alt="" />
+            </figure>
+            <figure class="fv__item">
+              <img class="img" src="./assets/f-image1-i_kNIlOE.jpeg" alt="" />
+            </figure>
+          </div>
+        </section>
+        <section class="topics">
+          <h2 class="section-title en">
+            TOPICS
+            <span>&</span>
+            <br />
+            EVENT
+          </h2>
+          <!-- スライドショー部分　jsプラグインswiperを使って実装 -->
+          <!-- ↓右にはみ出すデザイン実装用のタグ -->
+          <div class="swiper topics__swiper inview op">
+            <!-- ↓swiper-wrapperの直下にはスライド要素のswiper-slideのみを配置 -->
+            <div class="swiper-wrapper">
+              <!-- ↓swiper-slideひとつがスライドの要素一つに該当する -->
+              <!-- １枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.12.05</span>
+                <h3 class="slide__title mincho2">
+                  人を育て、人が繋ぐ。行方ひさこが佐賀で感じた伝統の進化と継承／陶芸家
+                  渡邊心平さん編
+                </h3>
+                <p class="n_txt">
+                  佐賀旅、第二回目は砥部焼という焼きものの町出身ながら、伊万里...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image11-B_zzOCZe.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+              <!-- ２枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.11.07</span>
+                <h3 class="slide__title mincho2">
+                  人を育て、人が繋ぐ。行方ひさこが佐賀で感じた伝統の進化と継承／「唐津
+                  松の井旅館」料理長 森次庸介さん編
+                </h3>
+                <p class="n_txt">
+                  器の世界に惹かれたきっかけは、幼少期に出会った祖父母が唐津旅...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image10-BAIfr_3X.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+              <!-- ３枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.03.22</span>
+                <h3 class="slide__title mincho2">USEUM SAGA vol.06</h3>
+                <p class="n_txt">
+                  第6弾の舞台となったのは、2025年に新市誕生20年を迎えた...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image0-BZl3PeR1.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+              <!-- ４枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.02.10</span>
+                <h3 class="slide__title mincho2">レジデンス No.4</h3>
+                <p class="n_txt">
+                  シェフ・イン・レジデンス第4弾では、東京・六本木のインド料理...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image20-BkQKu1sM.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+              <!-- ５枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.11.14</span>
+                <h3 class="slide__title mincho2">
+                  希少フルーツ栽培のパイオニア、唐津「富田農園」が農家魂をかけてチャレンジし続ける理由
+                </h3>
+                <p class="n_txt">
+                  「俺には悪か癖のあるとさ。とにかく“１番”じゃないと気が済ま...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image26-DycIyLe6.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+              <!-- ６枚目 -->
+              <a class="swiper-slide">
+                <span class="en day">2025.11.13</span>
+                <h3 class="slide__title mincho2">
+                  トークセッションアーカイブ動画公開のお知らせ
+                </h3>
+                <p class="n_txt">
+                  10月18日（土）、19日（日）の2日間に渡って開催した「S...
+                </p>
+                <div class="swiper-slide__img">
+                  <figure class="img">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image23-BGXkHaeP.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- /swiper -->
+          <!-- スクロールバー -->
+          <div class="swiper-scrollbar topics-scrollbar">
+            <div class="swiper-scrollbar-drag"></div>
+          </div>
+          <!-- スライド切り替えボタン -->
+          <div class="pager-area">
+            <!-- 前へ -->
+            <div class="button topics-button button-prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+              </svg>
+            </div>
+            <!-- 次へ -->
+            <div class="button topics-button button-next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <section class="concept">
+          <div class="concept__text-area">
+            <span class="en inview op">concept</span>
+            <h2 class="mincho-semibold inview op">
+              サガマリアージュ<br />
+              <span>
+                佐賀の食と器の
+                <br class="pc-off" />
+                可能性を探る、
+                <br class="pc-off" />
+                交流地。
+              </span>
+            </h2>
+            <!-- ↓jQueryプラグインでmoveのclassをつけることでふわっと表示させる -->
+            <p class="n_txt inview op">
+              出会いがなければ、最高の一皿は生まれない。
+            </p>
+            <p class="n_txt inview op">
+              料理人は一皿をつくるために、様々なつながりを持っている。
+              <br />
+              どんな食材を使うか。<br
+                class="sp-off"
+              />どんな味の組み合わせにするか。<br
+                class="sp-off"
+              />どんな器で表現するのか。<br
+                class="sp-off"
+              />どんな食彩を描くのか。
+            </p>
+            <p class="n_txt inview op">
+              ひとつひとつの決断は、人との出会いから生まれている。
+              <br class="sp-off" />
+              だからこそ、私たちは食の出会いが生まれる場をつくりたい。
+            </p>
+            <p class="n_txt inview op">
+              料理人が新たな出会いを活かし、可能性を探求することで
+              <br class="sp-off" />
+              一皿に物語が生まれ、今までにないものができるはずだ。
+            </p>
+            <p class="n_txt inview op">
+              出会いから、世界が注目する食文化を育てよう。
+            </p>
+          </div>
+        </section>
+        <section class="links">
+          <!-- about -->
+          <a href="#">
+            <div>
+              <h2 class="en ub_tit_txt -center">about</h2>
+              <p class="n_txt">
+                佐賀県の有益な資源である「食材」と「器」を「料理人」の感性で磨き上げながら、料理という一皿の上に佐賀の可能性を表現・発信していくことで、新たな価値を創造する取組。
+              </p>
+            </div>
+            <p class="en vm">View More</p>
+            <span class="square">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </span>
+            <figure class="img_area">
+              <img
+                class="fit-img"
+                src="./assets/f-image34-CQ09428S.jpeg"
+                alt=""
+              />
+            </figure>
+          </a>
+          <!-- history -->
+          <a href="#">
+            <div>
+              <h2 class="en ub_tit_txt -center">history</h2>
+              <p class="n_txt">
+                有田焼創業400年事業や肥前さが幕末維新博覧会、アジアベストレストラン50など、食と器をコンセプトにしたプロジェクトのこれまでの歩み。
+              </p>
+            </div>
+            <p class="en vm">View More</p>
+            <span class="square">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </span>
+            <figure class="img_area">
+              <img class="fit-img" src="./assets/image8-Cg6WhB42.jpeg" alt="" />
+            </figure>
+          </a>
+        </section>
+        <section class="ps-area" id="project">
+          <div class="ps-slide_area project-slide">
+            <h2 class="en">project</h2>
+            <div class="slide-wrap swiper project-slider">
+              <div class="slide swiper-wrapper">
+                <!-- 1枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image2-BqWYB3JP.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">サガマリアージュラボ</p>
+                    <p class="n_txt">
+                      県内料理人と食材・器の作り手たちが互いの知識や技術、感性などを共有する研究会
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 2枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image5-DSgpsafX.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">USEUM SAGA</p>
+                    <p class="n_txt">
+                      美術館に飾るような器で佐賀の美食を楽しむプレミアムなレストランイベント
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 3枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image14-DOMiMu-h.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">サガマリアージュセミナー</p>
+                    <p class="n_txt">
+                      食のプロフェッショナルを講師に招き、多角的な視点で食と器を思考するセミナー
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 4枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image15-CDM4MDVo.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">サガマリアージュツアー</p>
+                    <p class="n_txt">
+                      佐賀の地域資源に関心のある料理人に食材や器を紹介する産地ツアー
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 5枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image28-ByB_B_G1.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">シェフインレジデンスSAGA</p>
+                    <p class="n_txt">
+                      地方に興味のある料理人が佐賀に滞在しながらクリエーションを高めるプログラム
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 6枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image32-Bqdr1Ig-.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">サガマリアージュアカデミー</p>
+                    <p class="n_txt">
+                      料理人を志す県内学生を対象にした食のプロフェッショナルによる特別講義
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 7枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image29-DlEpTZ8o.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">SAGAガストロノミー会議</p>
+                    <p class="n_txt">
+                      食に関わるプロフェッショナルが佐賀に集い、様々な視点・角度で「食」の未来を考える祭典を開催。
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-scrollbar">
+              <div class="swiper-scrollbar-drag"></div>
+            </div>
+            <div class="pager-area">
+              <div class="button project-button button-prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+                </svg>
+              </div>
+              <div class="button project-button button-next">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ps-slide_area story-slide">
+            <h2 class="en">story</h2>
+            <div class="slide-wrap swiper story-slider">
+              <div class="slide story swiper-wrapper">
+                <!-- 1枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image24-BE_h016f.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">食</p>
+                    <p class="n_txt">
+                      佐賀の豊かな自然と対話しながらこだわりの食材を生み出す生産者たち
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 2枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image22-DFlFq6aH.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">器</p>
+                    <p class="n_txt">
+                      400年以上続く伝統と技術を受け継ぎながら器づくりに向き合う作り手たち
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+                <!-- 3枚目 -->
+                <a class="swiper-slide" href="#">
+                  <figure class="img_area">
+                    <img
+                      class="fit-img"
+                      src="./assets/f-image31-Dz1AGW6J.jpeg"
+                      alt=""
+                    />
+                  </figure>
+                  <div class="text-area">
+                    <p class="mincho-regular">料理人</p>
+                    <p class="n_txt">
+                      佐賀の「食」と「器」の価値を引き出すことのできる気鋭の県内料理人たち
+                    </p>
+                    <p class="en vm">View More</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-scrollber swiper-scrollbar">
+              <div class="swiper-scrollbar-drag"></div>
+            </div>
+            <div class="pager-area">
+              <div class="button story-button button-prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+                </svg>
+              </div>
+              <div class="button story-button button-next">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="26"
+                  viewBox="0 0 17 26"
+                  fill="none"
+                  class="svg replaced-svg"
+                >
+                  <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="topics voice_slide_area -staff">
+          <h2 class="en">Activity <br class="sp-off" />Log</h2>
+          <a href="#" class="en vm">View More</a>
+          <!-- swiper -->
+          <div class="swiper topics__swiper voice_swiper inview op">
+            <div class="swiper-wrapper">
+              <!-- 1枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2025.08.31</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image6-CBjuUqsb.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">サガマリアージュラボ No.5</h3>
+                <p class="n_txt">
+                  夏日が照り付ける7月末、川岸真人シェフ（カレーのアキンボ/佐...
+                </p>
+              </div>
+              <!-- 2枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2025.07.22</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image9-CCtylts5.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">佐賀市で栽培される鍋島小紋のゴマ</h3>
+                <p class="n_txt">
+                  市場に出回るわずか0.01%が国産と言われるゴマ。その中でも...
+                </p>
+              </div>
+              <!-- 3枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2025.07.11</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image12-Jngw1OaA.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">多久市の伝統野菜 桐岡ナス</h3>
+                <p class="n_txt">
+                  暑さが厳しくなる7月から収穫が始まる「桐岡ナス」の生産者さん...
+                </p>
+              </div>
+              <!-- 4枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2025.02.25</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image25-DPskNEPb.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">サガマリアージュラボ No.6</h3>
+                <p class="n_txt">
+                  この日ラボとして訪問したのは、独自の養殖方法で竹崎牡蠣を生産...
+                </p>
+              </div>
+              <!-- 5枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2025.02.02</span>
+                <span class="cate">USEUM SAGA</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image35-Dq6TP8ds.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">USEUM SAGA vol.6 事前視察①</h3>
+                <p class="n_txt">
+                  イベントに向けて、お互いの土地の風土を知るべく、まずは寺田シ...
+                </p>
+              </div>
+              <!-- 6枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2024.11.25</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image3-DxEAufJT.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">有田町の伝統野菜「戸矢かぶ」</h3>
+                <p class="n_txt">
+                  有田町戸矢地区のみで栽培されている佐賀の伝統野菜「戸矢かぶ」...
+                </p>
+              </div>
+              <!-- 7枚目 -->
+              <div class="swiper-slide">
+                <span class="en day">2024.08.08</span>
+                <span class="cate">サガマリアージュラボ</span>
+                <div class="img_area">
+                  <figure class="img">
+                    <img
+                      src="./assets/f-image4-D-cIldAK.jpeg"
+                      alt=""
+                      class="fit-img"
+                    />
+                  </figure>
+                </div>
+                <h3 class="slide_title">サガマリアージュラボ No.6</h3>
+                <p class="n_txt">
+                  2回目のラボ活動で訪れたのは、伝統的な静置発酵法でお酢を製造...
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /swiper -->
+          <div class="swiper-scrollbar">
+            <div class="swiper-scrollbar-drag"></div>
+          </div>
+          <div class="pager-area">
+            <div class="button button-prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M16 25L0.999999 13L16 1" stroke="#D8654A"></path>
+              </svg>
+            </div>
+            <div class="button button-next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="26"
+                viewBox="0 0 17 26"
+                fill="none"
+                class="svg replaced-svg"
+              >
+                <path d="M1 1L16 13L0.999999 25" stroke="#D8654A"></path>
+              </svg>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <section class="info_area">
+          <h2 class="logo_area">
+            <img src="./assets/logo_white1-BweQbpsT.png" alt="白い代替ロゴ" />
+          </h2>
+          <div class="link_area">
+            <div class="big_links">
+              <a class="en" href="#"><span>About us</span></a>
+              <a class="en" href="#"><span>History</span></a>
+              <div class="s_links_wrap">
+                <span class="en oc_btn">
+                  Project
+                  <!-- ↓ここにvマークが入る -->
+                  <span></span>
+                </span>
+                <!-- ↓上のProjectをクリックするとactiveのclassがついて見えるようになる -->
+                <!-- クリック時にstyle="max-height: 0px;"→273pxにインラインでスタイルが挿入される -->
+                <div class="small_links">
+                  <a class="mincho-regular" href="#">
+                    <span>サガマリアージュラボ</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>UREUM SAGA</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>サガマリアージュセミナー</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>サガマリアージュツアー</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>シェフインレジデンスSAGA</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>サガマリアージュアカデミー</span>
+                  </a>
+                  <span class="global-nav__sub-title en">Special Event</span>
+                  <a class="mincho-regular" href="#">
+                    <span>SAGAガストロノミー会議</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="big_links">
+              <div class="s_links_wrap">
+                <span class="en oc_btn st">
+                  Story
+                  <span></span>
+                </span>
+                <div class="small_links">
+                  <a class="mincho-regular" href="#">
+                    <span>食</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>器</span>
+                  </a>
+                  <a class="mincho-regular" href="#">
+                    <span>料理人</span>
+                  </a>
+                </div>
+              </div>
+              <a class="en" href="#">
+                <span>Activity Log</span>
+              </a>
+            </div>
+            <div class="sns_links">
+              <a href="#">
+                <i class="header__sns__icon fa-brands fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="header__sns__icon fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+        <div class="c-ad_area">
+          <p class="top_txt">
+            運営元：サガマリアージュ推進協議会
+            <br />
+            〒840-8570 佐賀県佐賀市城内1-1-59
+            <br />
+            佐賀県庁 流通・貿易課内
+          </p>
+          <p class="en copy -fz10">© 2024 Saga Mariage</p>
+        </div>
+        <div class="btm_area">
+          <img
+            class="bg"
+            src="./assets/footer_sagamariage-JzP-iqad.png"
+            alt=""
+          />
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

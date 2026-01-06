@@ -32,7 +32,7 @@ $(document).ready(function () {
 
       setTimeout(function () {
         $target.addClass("move");
-      }, 600); // ロードと同時にならないように
+      }, 700); // ロードと同時にならないように
     }
   });
 });
