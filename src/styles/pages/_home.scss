@@ -292,7 +292,7 @@
     height: 100%;
     z-index: 1;
     transition-property: transform;
-    box-sizing: content-box;
+    // box-sizing: content-box;
     & .swiper-slide {
       width: 245px;
       padding-right: 36px;

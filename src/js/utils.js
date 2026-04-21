@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       threshold: 0.2,
-    }
+    },
   );
 
   targets.forEach((el) => observer.observe(el));
